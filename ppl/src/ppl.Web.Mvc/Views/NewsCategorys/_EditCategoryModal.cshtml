@@ -1,0 +1,23 @@
+﻿@using ppl.Web.Models.Common.Modals
+@model ppl.Web.Models.NewsManger.Category.EditCategoryViewModel
+@{
+    Layout = null;
+}
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("编辑新闻类型"))
+<div class="modal-body">
+    <form name="EditForm" role="form" novalidate class="form-validation">
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <div class="form-line focused">
+                        <input id="categoryName"  type="text" name="CategoryName" value="@Model.CategoryName" required maxlength="32" minlength="2" class="validate form-control">
+                        <label for="categoryName" class="form-label">类型名称</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+<script src="~/view-resources/Views/Category/EditModal.js" asp-append-version="true"></script>

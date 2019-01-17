@@ -1,0 +1,17 @@
+﻿@using ppl.Web.Views.Shared.Components.SideBarUserArea
+@model SideBarUserAreaViewModel
+<div class="user-info">
+    <div class="header">
+        <h4 style="margin-bottom:0;color:white;font-weight:500">欢 迎 您</h4>
+    </div>
+    <div class="info-container">
+        <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>@Html.Raw(Model.GetShownLoginName())</b> </div>
+        <div class="email">@Model.LoginInformations.User.EmailAddress</div>
+        <div class="btn-group user-helper-dropdown">
+            <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+            <ul class="dropdown-menu pull-right">
+                <li><a href="@Url.Action("Logout", "Account", new { area= string.Empty })"><i class="material-icons">input</i>注 销</a></li>
+            </ul>
+        </div>
+    </div>
+</div>

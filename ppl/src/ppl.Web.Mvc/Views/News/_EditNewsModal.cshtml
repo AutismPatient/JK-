@@ -1,0 +1,238 @@
+﻿@using ppl.Web.Startup
+@using static ppl.JklConsts
+@using ppl.Web.Models.Common.Modals
+@model ppl.Web.Models.NewsManger.NewsList.EditNewsViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.NewsManagments; // The menu item will be active for this page.
+}
+@{
+    Layout = null;
+}
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("编辑资料内容"))
+<div class="modal-body">
+    <form name="NewsEditForm" role="form" novalidate class="form-validation" enctype="multipart/form-data">
+        <input type="hidden" name="Id" id="Id" value="@Model.News.Id" />
+        <input type="hidden" name="UserId" id="UserId" value="@Model.News.UserId" />
+        <ul class="nav nav-tabs tab-nav-right" role="tablist">
+            <li role="presentation" class="active"><a href="#create-news-detail" data-toggle="tab">新闻概要</a></li>
+            <li role="presentation"><a href="#create-news-tag" data-toggle="tab">标签</a></li>
+        </ul>
+        <div class="tab-content" style="margin-top:20px;">
+            <div id="create-news-detail" class="tab-pane animated fadeIn active">
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input id="Title" type="text" name="Title" value="@Model.News.Title" required maxlength="@MaxTitleLength" minlength="2" class="validate form-control">
+                                <label for="Title" class="form-label">@L("Title")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <textarea id="Abstract" type="text" name="Abstract" required maxlength="@MaxAbstractLength" minlength="2" class="validate form-control">@Model.News.Abstract</textarea>
+                                <label for="Abstract" class="form-label">@L("Abstract")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row clearfix">
+                    <div class="col-sm-6">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <select class="form-control" id="ListType" name="ListType">
+                                    @foreach (var typename in Enum.GetNames(typeof(ListType)))
+                                    {
+                                        if (Model.News.ListType.ToString() == typename)
+                                        {
+                                            <option value="@typename" selected>@(typename.Equals("Quality") ? "高质量" : "普通")</option>
+                                        }
+                                        else
+                                        {
+                                            <option value="@typename">@(typename.Equals("Quality") ? "高质量" : "普通")</option>
+                                        }
+
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <select class="form-control" id="Category" name="CategoryId">
+                                    @if (Model.newsCategory != null)
+                                    {
+                                        @foreach (var category in Model.NewsCategories)
+                                        {
+                                            if (Model.newsCategory.Id.Equals(category.Id))
+                                            {
+                                                <option value="@category.Id" selected>@category.CategoryName</option>
+                                            }
+                                            else
+                                            {
+                                                <option value="@category.Id">@category.CategoryName</option>
+                                            }
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <option>暂时没有新闻类别</option>
+                                    }
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <a href="#" class="btn btn-default file">上传封面图片<input type="file" name="CoverUrl" value="@Model.News.CoverUrl" accept="" onchange="preover(this)" class="validate form-control" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-8">
+                        <div class="form-group form-float">
+                            <div class="form-line focused">
+                                <input id="ReadTime" name="ReadTime" class="validate form-control" value="@Model.News.ReadTime" type="number" min="1" style="margin-top: -5px;" required />
+                                <label for="ReadTime" class="form-label">@L("ReadTime")</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12 image-input ">
+                        <img src="@Model.News.CoverUrl" class="img-rounded" data-toggle="tooltip" data-placement="top" title="图片" id="url" />
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-sm-12">
+                        <div class="form-group form-float">
+                            <input id="Recommends" type="checkbox" name="Recommend" value="@Model.News.Recommend" @(Model.News.Recommend == Recommend.Yes ? "checked" : "") class="filled-in">
+                            <label for="Recommends" class="">是否推荐</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div id="editor1">
+
+                                </div>
+                                <input type="hidden" name="Content" id="Content" value="@Model.News.Content" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="create-news-tag" class="tab-pane animated fadeIn">
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="div-pad select-tag">
+                            <h6>可选标签：</h6>
+                            @foreach (var tags in Model.TagDtos)
+                            {
+                                <span class="label label-primary tags" title="点击添加或移除" data-id="@tags.Id" data-name="@tags.TagName">@tags.TagName <i class="material-icons">add</i></span>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="div-pad addselect-tag">
+                            <h6>已选标签：</h6>
+                            @foreach (var tags in Model.NewsTags)
+                            {
+                                <span class="label label-primary tags" title="点击添加或移除" data-id="@tags.Id" data-name="@tags.TagName">@tags.TagName <i class="material-icons">clear</i></span>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+<script src="~/view-resources/Views/NewsManger/_EditModel.js" asp-append-version="true"></script>
+<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
+<script type="text/javascript">
+    //富文本编辑器
+    var E = window.wangEditor;
+    var editor = new E('#editor1');
+    
+    editor.customConfig.uploadImgShowBase64 = true;
+    editor.customConfig.uploadImgMaxSize = 2 * 1024 * 1024;//大小
+    editor.customConfig.uploadImgMaxLength = 5;//张数
+    editor.customConfig.uploadImgHooks = {
+        before: function (xhr, editor, files) {
+            // 图片上传之前触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，files 是选择的图片文件
+
+            // 如果返回的结果是 {prevent: true, msg: 'xxxx'} 则表示用户放弃上传
+            // return {
+            //     prevent: true,
+            //     msg: '放弃上传'
+            // }
+        },
+        success: function (xhr, editor, result) {
+            // 图片上传并返回结果，图片插入成功之后触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+        },
+        fail: function (xhr, editor, result) {
+            // 图片上传并返回结果，但图片插入错误时触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象，result 是服务器端返回的结果
+        },
+        error: function (xhr, editor) {
+            // 图片上传出错时触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+        },
+        timeout: function (xhr, editor) {
+            // 图片上传超时时触发
+            // xhr 是 XMLHttpRequst 对象，editor 是编辑器对象
+        },
+
+        // 如果服务器端返回的不是 {errno:0, data: [...]} 这种格式，可使用该配置
+        // （但是，服务器端返回的必须是一个 JSON 格式字符串！！！否则会报错）
+        customInsert: function (insertImg, result, editor) {
+            // 图片上传并返回结果，自定义插入图片的事件（而不是编辑器自动插入图片！！！）
+            // insertImg 是插入图片的函数，editor 是编辑器对象，result 是服务器端返回的结果
+
+            // 举例：假如上传图片成功后，服务器端返回的是 {url:'....'} 这种格式，即可这样插入图片：
+            var url = result.url
+            insertImg(url)
+
+            // result 必须是一个 JSON 格式字符串！！！否则报错
+        }
+    };
+    editor.create();
+    console.log($("input[id=Content]").val());
+    $("#NewsEditModal .w-e-text").html($("input[id=Content]").val());
+</script>
+<script>
+    //上传图片
+    function preover(img) {
+        var file = img.value;
+        if (!/.(gif|jpg|jpeg|png|GIF|JPG|bmp)$/.test(file)) {
+            alert("图片类型必须是.gif,jpeg,jpg,png,bmp中的一种");
+            return;
+        } else {
+            if ((img.files[0].size).toFixed(2) >= (2 * 1024 * 1024)) {
+
+                alert("请上传小于2M的图片");
+                return;
+            }
+        }
+        if (img.files && img.files[0]) {
+            var re = new FileReader();
+            re.onload = function (e) {
+                $(".image-input").html('<img src="' + e.target.result + '" class="img-rounded" data-toggle="tooltip" data-placement="top" title=""/>');
+            };
+            re.readAsDataURL(img.files[0]);
+        }
+    }
+</script>

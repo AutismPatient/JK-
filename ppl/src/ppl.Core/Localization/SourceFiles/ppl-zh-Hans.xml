@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<localizationDictionary culture="zh-Hans">
+  <texts>
+    <text name="HomePage" value="主页" />
+    <text name="About" value="关于我们" />
+    <text name="WellcomeMessage" value="欢迎使用 截客资料系统!" />
+    
+    <text name="FormIsNotValidMessage" value="部分输入信息不符合要求，请检查并改正.." />
+    <text name="TenantNameCanNotBeEmpty" value="租户名不能为空" />
+
+    <text name="InvalidUserNameOrPassword" value="用户名或密码无效" />
+    <text name="ThereIsNoTenantDefinedWithName{0}" value="租户 {0}不存在" />
+    <text name="TenantIsNotActive" value="租户 {0} 未激活." />
+    <text name="UserIsNotActiveAndCanNotLogin" value="用户 {0} 未激活，不能登录." />
+    <text name="PleaseEnterLoginInformation" value="请输入登录信息" />
+    <text name="TenancyName" value="租户名称" />
+    <text name="UserNameOrEmail" value="用户名或邮箱地址" />
+    <text name="Password" value="密码" />
+    <text name="RememberMe" value="记住我" />
+    <text name="LogIn" value="登录" />
+    <text name="Language" value="语言" />
+    
+    <text name="LoginFailed" value="登录失败!" />
+    
+    <text name="NewsManagments">资料数据管理</text>
+    <text name="NewsList">资料列表</text>
+    <text name="NewsTags">资料标签</text>
+    <text name="NewsCategory">资料类别</text>
+    <text name="WebManger">网站管理</text>
+    <text name="WebParameter">网站参数设置</text>
+    <text name="FeedBack">意见反馈</text>
+    <text name="Title">标题</text>
+    <text name="Recommend">推荐是否</text>
+    <text name="Author">作者</text>
+    <text name="Categories">类别</text>
+    <text name="PageView">用户浏览数</text>
+    <text name="Status">状态</text>
+    <text name="Actions">操作</text>
+    <text name="CreateNews">新建文章</text>
+    <text name="Cancel">返回</text>
+    <text name="Save">保存</text>
+    <text name="Abstract">简介</text>
+    <text name="ReadTime">阅读时间</text>
+    <text name="CoverUrl">封面图片地址</text>
+    <text name="ListType">列表类型</text>
+    <text name="Content">正文内容</text>
+    <text name="Audit">审核状态</text>
+    <text name="This field is required.">此数据是必填项！</text>
+    <text name="DataManagementCenter">资料数据管理中心</text>
+    <text name="DatabaseManagement">资料库管理</text>
+    <text name="LabelItem">标签项</text>
+    <text name="CategoryItem">类别项</text>
+    <text name="Home">主页仪表盘</text>
+    <text name="Tenants" value="租户管理" />
+    <text name="Users" value="用户" />
+    <text name="Roles" value="角色" />
+    <text name="MultiLevelMenu" value="多层次菜单" />
+    
+    
+    <!--权限相关-->
+    <text name="CreateUser" value="创建用户" />
+    <text name="CreateRole" value="创建角色" />
+    <text name="CreateCategory" value="创建类别" />
+    <text name="CreateData" value="创建资料" />
+    <text name="CreateTag" value="创建标签" />
+    <text name="CreateTenant" value="创建租户" />
+    <text name="UpdateUsers" value="更新用户" />
+    <text name="UpdateRoles" value="更新角色" />
+    <text name="UpdateTag" value="更新标签" />
+    <text name="UpdateData" value="更新资料" />
+    <text name="UpdateCategory" value="更新类别" />
+    <text name="UpdateTenant" value="更新租户" />
+    <text name="DeleteUsers" value="删除用户" />
+    <text name="DeleteRoles" value="删除角色" />
+    <text name="DeleteCategory" value="删除类别" />
+    <text name="DeleteData" value="删除资料" />
+    <text name="DeleteTag" value="删除标签" />
+    <text name="DeleteTenant" value="删除租户" />
+    <text name="EditWebSetting" value="更新站点设置" />
+    <text name="SeedEmail" value="回复用户反馈" />
+    <text name="DeleteFeedBack" value="删除用户反馈" />
+    <text name="ZoreAbout" value="模块零" />
+
+  </texts>
+</localizationDictionary>

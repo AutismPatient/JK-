@@ -1,0 +1,30 @@
+﻿@using ppl.Web.Resources
+@inject IWebResourceManager WebResourceManager
+@{
+    WebResourceManager.AddScript(ApplicationPath + "view-resources/Views/Shared/Components/TenantChange/Default.js");
+}
+<div class="card tenant-change-component" style="margin-bottom: 3px;">
+    <div class="body text-center">
+        <span>
+            租户:
+
+            @if (Model.Tenant != null)
+            {
+                <span title="@Model.Tenant.Name"><strong>@Model.Tenant.TenancyName</strong></span>
+            }
+            else
+            {
+                <span>未选择</span>
+            }
+
+            (<a href="#" data-toggle="modal" data-target="#TenantChangeModal">选择</a>)
+        </span>
+    </div>
+</div>
+<div class="modal fade" id="TenantChangeModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>

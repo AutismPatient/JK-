@@ -1,0 +1,132 @@
+﻿@using ppl
+@using ppl.Web.Models.Languages
+@using ppl.Web.Startup
+@using ppl.Web.Models.Common.Modals
+@model GetLanguageViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.Language; // The menu item will be active for this page.
+}
+@section scripts
+    {
+    <environment names="Development">
+        <script src="~/view-resources/Views/Languages/Index.js" asp-append-version="true"></script>
+    </environment>
+}
+<div class="row clearfix">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    系统语言管理
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>刷新</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>名称</th>
+                            <th>标记代码</th>
+                            <th>创建时间</th>
+                            <th>启用状态</th>
+                            <th>操作</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var languages in Model.Items)
+                        {
+                            <tr>
+                                <td><i class="@languages.Icon"></i>   @languages.DisplayName</td>
+                                <td>@languages.Name</td>
+                                <td>@languages.CreationTime</td>
+                                <td><i class="material-icons" style="color:@(!languages.IsDisabled ? "green":"red");">@(!languages.IsDisabled ? "check_box" : "indeterminate_check_box")</i></td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li><a href="#" class="waves-effect waves-block edit" data-id="@languages.Id" data-toggle="modal" data-target="#LanguagesEditModal"><i class="material-icons">edit</i>修正</a></li>
+                                        <li><a href="#" class="waves-effect waves-block delete" data-id="@languages.Id" data-name="@languages.DisplayName"><i class="material-icons">delete_sweep</i>删除</a></li>
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#LanguagesCreateModal">
+                    <i class="material-icons">add</i>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="LanguagesCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            @Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("为系统创建新的语言"))
+            <div class="modal-body">
+                <form name="languagesCreateForm" role="form" novalidate class="form-validation">
+                    <div role="tabpanel" class="tab-pane animated fadeIn ">
+                        <div class="row clearfix" style="margin-top:10px;">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <label for="createLanguage">语言</label>
+                                    @Html.DropDownList("Name",Model.LanguageNames.Select(i=>i.ToSelectItem()),new{
+                                   @class= "form-control bs-select",
+                                   data_live_search="true",
+                                   @required= "required",
+                                   name = "Name",
+                                   id = "createLanguage"
+                               })
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix" style="margin-top:10px;">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <label for="Icon">语言标记</label>
+                                    <select id="DisplayName" name="DisplayName" class="form-control bs-select" data-live-search="true" required>
+                                        @foreach (var flag in Model.Flags)
+                                        {
+                                            <option data-icon="@flag.Value" value="@flag.Value"><i class="@flag.Value"></i>@flag.DisplayText</option>
+                                        }
+                                    </select>
+                                    <input type="hidden" name="Icon" value="" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row clearfix" style="margin-top:10px;">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <input type="checkbox" name="IsEnabled" class="filled-in" id="IsEnabled">
+                                    <label for="IsEnabled" class="">是否启用</label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                <button type="submit" class="btn btn-primary waves-effect" id="submit">@L("Save")</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="LanguagesEditModal" tabindex="-1" role="dialog" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        </div>
+    </div>
+</div>
+

@@ -1,0 +1,58 @@
+﻿@using ppl
+@using ppl.Web.Models.Languages
+@using ppl.Web.Startup
+@using static ppl.JklConsts
+@using ppl.Web.Models.Common.Modals
+@model ppl.Web.Models.Languages.GetLanguagesEdit
+
+@{
+    Layout = null;
+}
+@*<link href="~/lib/bootstrap-select/less/bootstrap-select.less" rel="stylesheet" />*@
+
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("编辑语言内容"))
+<div class="modal-body">
+    <form name="languagesEditForm" role="form" novalidate class="form-validation">
+        <input type="hidden" name="Id" value="@Model.Language.Id" />
+        <div role="tabpanel" class="tab-pane animated fadeIn ">
+            <div class="row clearfix" style="margin-top:10px;">
+                <div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <label for="createLanguage">语言</label>
+                        @Html.DropDownList("Name",Model.LanguageNames.Select(i=>i.ToSelectItem()),new{
+                       @class= "form-control bs-select",
+                       data_live_search="true",
+                       @required= "required",
+                       name = "Name",
+                       id = "createLanguage"
+                   })
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix" style="margin-top:10px;">
+                <div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <label for="Icon">语言标记</label>
+                        <select id="DisplayName" name="DisplayName" class="form-control bs-select" data-live-search="true" required>
+                            @foreach (var flag in Model.Flags)
+                            {
+                                <option data-icon="@flag.Value" value="@flag.Value" selected="@flag.IsSelected"><i class="famfamfam-flags zm">@flag.DisplayText</i>    </option>
+                            }
+                        </select>
+                        <input type="hidden" name="Icon" value="" />
+                    </div>
+                </div>
+            </div>
+            <div class="row clearfix" style="margin-top:10px;">
+                <div class="col-sm-12">
+                    <div class="form-group form-float">
+                        <input type="checkbox" name="IsDisabled" value="@Model.Language.IsDisabled.ToString()" @(Model.Language.IsDisabled ? "" : "checked" ) class="filled-in" id="IsDisabled">
+                        <label for="IsDisabled" class="">是否启用</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+<script src="~/view-resources/Views/Languages/_Edit.js"></script>

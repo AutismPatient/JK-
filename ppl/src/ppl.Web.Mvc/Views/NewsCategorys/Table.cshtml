@@ -1,0 +1,95 @@
+﻿
+@model ppl.Web.Models.NewsManger.Category.CategoryViewModel
+@{
+    Layout = null;
+}
+<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+    <div class="card">
+        <div class="header">
+            <h2>
+                @L("NewsCategory") <small>共有 @Model.NewsCategories.Count() 条可编辑数据</small>
+            </h2>
+            <ul class="header-dropdown m-r--5">
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">search</i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+                        <li class="seach"><input type="text" name="seacrh" placeholder="搜索数据" class="form-control form-group-sm" /></li>
+                    </ul>
+                </li>
+                <li class="dropdown">
+                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        <i class="material-icons">more_vert</i>
+                    </a>
+                    <ul class="dropdown-menu pull-right">
+
+                        <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>@L("Refresh")</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="body table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th id="select">
+                            <input id="IsCheckAll" type="checkbox" name="IsCheckAll" value="false" class="form-control"><label for="IsCheckAll" class="form-label">全选</label>
+                        </th>
+                        <th>名称</th>
+                        <th>创建时间</th>
+                        <th>状态</th>
+                        <th>@L("Actions")</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var news in Model.NewsCategories)
+                    {
+                        <tr>
+                            <td><input id="@news.Id" type="checkbox" name="single" value="false" class="form-control"><label for="@news.Id" class="form-label">  </label></td>
+                            <td>@news.CategoryName</td>
+                            <td>@news.CreationTime</td>
+                            <td><i class="material-icons" style="color:@(news.IsDeleted ? "red":"green");">@(news.IsDeleted ? "indeterminate_check_box" : "check_box")</i></td>
+                            <td class="dropdown">
+                                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                    <i class="material-icons">menu</i>
+                                </a>
+                                <ul class="dropdown-menu pull-right">
+                                    <li><a href="#" class="waves-effect waves-block edit" data-id="@news.Id" data-name="@news.CategoryName" data-toggle="modal" data-target="#CategoryEditModal"><i class="material-icons">edit</i>修改</a></li>
+                                    @if (news.IsDeleted)
+                                    {
+                                        <li><a href="#" class="waves-effect waves-block delete" data-id="@news.Id" data-name="@news.CategoryName" data-delete="@news.IsDeleted"><i class="material-icons">reply</i>恢复</a></li>
+                                    }
+                                    else
+                                    {
+                                        <li><a href="#" class="waves-effect waves-block delete" data-id="@news.Id" data-name="@news.CategoryName" data-delete="@news.IsDeleted"><i class="material-icons">delete_sweep</i>删除</a></li>
+                                    }
+                                </ul>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+            <div class="row" style="margin-top:30px;">
+                <div class="col-md-3">
+                    <a href="javascript:void();" class="btn btn-default btn-sm">当前页码：<span id="PageIndex">@Model.PageIndex</span> / <span id="PageCount">@Model.TotalPageCount</span> </a>
+                    <a href="javascript:void();" class="btn btn-default btn-sm pad" id="Top"><i class="material-icons">keyboard_arrow_left</i></a>
+                    <a href="javascript:void();" class="btn btn-default btn-sm pad" id="Next"><i class="material-icons">keyboard_arrow_right</i></a>
+                </div>
+                <div class="col-md-3">
+                    <div class="input-group">
+                        <input type="number" id="TotalPageCount" class="form-control form-group-sm input-info" value="@Model.TotalPageCount" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);padding: 4px 10px;" max="@Model.TotalPageCount" min="1">
+                        <span class="input-group-btn">
+                            <button class="btn btn-sm btn-primary" type="button" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">跳转</button>
+                        </span>
+                    </div>
+                </div>
+                <div class="col-md-6 text-right">
+                    <button type="button" class="btn btn-success btn-sm btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#NewsCreateModal">
+                        <i class="material-icons">add</i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

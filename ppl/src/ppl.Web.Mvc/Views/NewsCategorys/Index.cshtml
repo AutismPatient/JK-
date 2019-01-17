@@ -1,0 +1,278 @@
+﻿@using ppl.Web.Startup
+@using static ppl.JklConsts
+@model ppl.Web.Models.NewsManger.Category.CategoryViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.NewsManagments; // The menu item will be active for this page.
+}
+@section scripts
+    {
+    <environment names="Development">
+        <script src="~/view-resources/Views/Category/Index.js" asp-append-version="true"></script>
+    </environment>
+}
+<style>
+    .pad {
+        padding: 2px 7px;
+    }
+
+    .gurp {
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 50%;
+    }
+
+    .input-info {
+        font-size: 13px;
+        height: 28px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+        border-radius: 2px;
+    }
+
+    .input-group .form-control:focus {
+        z-index: initial;
+    }
+
+    .btn-circle {
+        width: 30px;
+        height: 30px;
+    }
+
+        .btn-circle i {
+            left: -4px;
+        }
+
+    #select {
+        padding-bottom: 6px;
+    }
+
+    [type="checkbox"] + label {
+        line-height: 23px;
+        margin-bottom: 0;
+    }
+
+    .file {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+        .file input {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    form textarea {
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 45px;
+    }
+
+    .tags {
+        cursor: pointer;
+        padding-bottom: 2.4px;
+        position: relative;
+    }
+
+        .tags:hover i {
+            opacity: 1;
+        }
+
+        .tags i {
+            opacity: 0;
+            font-size: inherit;
+            position: absolute;
+            right: -6px;
+            top: -2px;
+            background-color: #333;
+        }
+
+    .div-pad {
+        padding: 10px;
+        border: 1px dashed #808080;
+        margin-bottom: 20px;
+    }
+
+    .seach {
+        padding: 10px;
+    }
+
+        .seach input {
+            border-radius: 0;
+            width: 280px;
+        }
+    .table-responsive a[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+    .dropdown{
+        margin-left:20px;
+    }
+    tbody > tr:hover{
+        background-color:#f5f5f5;
+    }
+</style>
+<div class="row clearfix body-list">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2>
+                    @L("NewsCategory") <small>共有 @Model.NewsCategories.Where(x => x.IsDeleted != true).Count() 条可编辑数据</small>
+                </h2>
+                <ul class="header-dropdown m-r--5">
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">delete</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a id="DeleteList" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">priority_high</i>批量删除</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">reply</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li>
+                                <a id="replyList" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">priority_high</i>批量恢复</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">search</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+                            <li class="seach">
+                                <input type="text" name="seacrh" placeholder="搜索数据" class="form-control form-group-sm" />
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                            <i class="material-icons">more_vert</i>
+                        </a>
+                        <ul class="dropdown-menu pull-right">
+
+                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>刷新数据</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <div class="body table-responsive">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th id="select" style="max-width:40px;">
+                                <input id="IsCheckAll" type="checkbox" name="IsCheckAll" value="false" class="filled-in"><label for="IsCheckAll" class="">全选</label>
+                            </th>
+                            <th>#</th>
+                            <th>名称</th>
+                            <th>创建时间</th>
+                            <th>状态</th>
+                            <th>@L("Actions")</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{var num = 0; }
+                        @foreach (var news in Model.NewsCategories)
+                        {
+                            num++;
+                            <tr>
+                                <td style="max-width:40px;"><input id="@news.Id" data-id="@news.Id" type="checkbox" name="single" value="false" class="filled-in"><label for="@news.Id" class="">  </label></td>
+                                <td>@num</td>
+                                <td>@news.CategoryName</td>
+                                <td>@String.Format("{0:D}", news.CreationTime)</td>
+                                <td><i class="material-icons" style="color:@(news.IsDeleted ? "red":"green");">@(news.IsDeleted ? "indeterminate_check_box" : "check_box")</i></td>
+                                <td class="dropdown">
+                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                                        <i class="material-icons">menu</i>
+                                    </a>
+                                    <ul class="dropdown-menu pull-right">
+                                        <li>
+                                            <a href="#" class="waves-effect waves-block edit" @(news.IsDeleted ? "disabled" : "") data-id="@news.Id" data-name="@news.CategoryName" data-toggle="modal" data-target="#CategoryEditModal"><i class="material-icons">edit</i>修改</a>
+                                        </li>
+                                        @if (news.IsDeleted)
+                                        {
+                                            <li><a href="#" class="waves-effect waves-block delete" data-id="@news.Id" data-name="@news.CategoryName" data-delete="@news.IsDeleted"><i class="material-icons">reply</i>恢复</a></li>
+                                        }
+                                        else
+                                        {
+                                            <li><a href="#" class="waves-effect waves-block delete" data-id="@news.Id" data-name="@news.CategoryName" data-delete="@news.IsDeleted"><i class="material-icons">delete_sweep</i>删除</a></li>
+                                        }
+                                    </ul>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+                <div class="row" style="margin-top:30px;">
+                    <div class="col-md-3">
+                        <a href="javascript:void();" class="btn btn-default btn-sm">当前页码：<span id="PageIndex">@Model.PageIndex</span> / <span id="PageCount">@Model.TotalPageCount</span> </a>
+                        @{ var top = Model.PageIndex-1;var next = Model.PageIndex+1;}
+                        <a href="../../NewsCategorys/Index?PageIndex=@top" @(Model.PageIndex<=1 ? "disabled":"") class="btn btn-default btn-sm pad" id="Top"><i class="material-icons">keyboard_arrow_left</i></a>
+                        <a href="../../NewsCategorys/Index?PageIndex=@next" @(Model.PageIndex>=Model.TotalPageCount ? "disabled":"") class="btn btn-default btn-sm pad" id="Next"><i class="material-icons">keyboard_arrow_right</i></a>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="input-group">
+                            <input type="number" id="TotalPageCount" class="form-control form-group-sm input-info" value="@Model.TotalPageCount" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);padding: 4px 10px;" max="@Model.TotalPageCount" min="1">
+                            <span class="input-group-btn">
+                                <a href="../../NewsCategorys/Index?PageIndex=@Model.TotalPageCount" class="btn btn-sm btn-primary" id="jump" type="button" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">跳转</a>
+                            </span>
+                        </div>
+                    </div>
+                    <div class="col-md-6 text-right">
+                        <button type="button" class="btn btn-success btn-sm btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#NewsCreateModal">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="NewsCreateModal" tabindex="-1" role="dialog" aria-labelledby="RoleCreateModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">
+                    <span>创建新闻类型</span>
+                </h4>
+            </div>
+            <div class="modal-body">
+                <form name="NewsCreateForm" role="form" novalidate class="form-validation">
+                    <div id="create-news-details" class="tab-pane animated fadeIn active">
+                        <div class="row clearfix">
+                            <div class="col-sm-12">
+                                <div class="form-group form-float">
+                                    <div class="form-line">
+                                        <input id="CategoryName" type="text" name="CategoryName" required maxlength=@MaxCategoryLength minlength="2" class="validate form-control">
+                                        <label for="CategoryName" class="form-label">类型名称</label>
+                                    </div>
+                                    <p class="text-right text-white-50" style="margin-top:10px"><label>*输入2到6位字符以保证页面的排版</label></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-default waves-effect" data-dismiss="modal">@L("Cancel")</button>
+                        <button type="submit" class="btn btn-primary waves-effect">@L("Save")</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="CategoryEditModal" tabindex="-1" role="dialog" aria-labelledby="EditModalLabel" data-backdrop="static">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+
+        </div>
+    </div>
+</div>
+

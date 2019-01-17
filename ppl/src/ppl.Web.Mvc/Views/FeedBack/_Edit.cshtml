@@ -1,0 +1,29 @@
+﻿@using ppl.Web.Models.FeedBack
+@using ppl.Web.Models.Common.Modals
+@model CreateOrUpdateViewModel
+@{
+    Layout = null;
+}
+@Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("客户所反馈的信息"))
+<div class="modal-body">
+    <form name="ThisForm" role="form" novalidate class="form-validation">
+        <input type="hidden" name="Email" value="@Model.Email" />
+        <input type="hidden" name="Name" value="@Model.Name" />
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <div class="form-group form-float">
+                    <p>@Model.Name 说:</p>
+                    <p><b>@Model.Main</b></p>
+                </div>
+            </div>
+        </div>
+        <div class="row clearfix">
+            <div class="col-sm-12">
+                <label>回复：</label>
+                <textarea name="SeedStr" class="form-control validate" maxlength="256" required></textarea>
+            </div>
+        </div>
+    </form>
+</div>
+@Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
+<script src="~/view-resources/Views/FeedBack/Edit.js" asp-append-version="true"></script>

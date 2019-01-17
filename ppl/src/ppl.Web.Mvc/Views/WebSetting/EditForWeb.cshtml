@@ -1,0 +1,77 @@
+﻿@using ppl.Web.Startup
+@using static ppl.JklConsts
+@model ppl.Web.Models.WebSettings.CreateOrUpdateViewModel
+@{
+    ViewBag.CurrentPageName = PageNames.WebSettings;
+}
+@section scripts
+    {
+    <environment names="Development">
+        <script src="~/view-resources/Views/WebSetting/Index.js" asp-append-version="true"></script>
+    </environment>
+}
+<style>
+    .seach {
+        padding: 0px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    .error {
+        color: red;
+        font-size: .8rem;
+    }
+
+    .seach input {
+        border-radius: 0;
+    }
+</style>
+<div class="row clearfix body-list">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+            <div class="header">
+                <h2><b>站点基础参数设置：</b> </h2>
+            </div>
+            <div class="body table-responsive">
+                <div class="row">
+                    <form name="SettingForm" role="form" novalidate class="form-validation">
+                        @if (Model.Id != Guid.Empty)
+                        {
+                            <input name="Id" value="@Model.Id" type="hidden" />
+                        }
+                        <div class="seach row">
+                            <div class="col-md-3">
+                                <input type="text" name="HomeUrlTitle" placeholder="首页标题栏(16个字以内)" value="@Model.HomeUrlTitle" class="form-control form-group-sm" required data-toggle="tooltip" data-placement="right" title="首页标题栏" />
+                            </div>
+                            <div class="col-md-9">
+                                <input type="text" name="KeyWord" placeholder="关键词(以，号隔开)" value="@Model.KeyWord" class="form-control form-group-sm" required data-toggle="tooltip" data-placement="bottom" title="SEO检索词"/>
+                            </div>
+                        </div>
+                        <div class="seach row">
+                            <div class="col-md-9">
+                                <input type="text" name="Describe" placeholder="站点描述" value="@Model.Describe" class="form-control form-group-sm" required data-toggle="tooltip" data-placement="top" title="网站基本描述"/>
+                            </div>
+                            <div class="col-md-3">
+                                <input type="text" name="IconUrl" placeholder="图标名称" value="@Model.IconUrl" class="form-control form-group-sm" required data-toggle="tooltip" data-placement="top" title="网站图标文件名"/>
+                            </div>
+                        </div>
+                        <div class="seach row">
+                            <div class="col-md-12">
+                                <div class="switch">
+                                    <span>是否启用：</span>
+                                    <label><input type="checkbox" name="IsEnabled" value="@Model.IsEnabled.ToString()" @(Model.IsEnabled? "checked":"")><span class="lever"></span></label>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="row" style="margin-top:10px;border-top:1px dashed #ddd">
+                    <div class="col-md-12" style="padding-top:10px;">
+                        <button type="button" class="btn btn-primary save-button waves-effect">@L("Save")</button>
+                        <i style="color:#808080;font-size:.9rem;margin-left:12px;">*所有站点设置回关联到SEO优化，请慎重设置！</i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
