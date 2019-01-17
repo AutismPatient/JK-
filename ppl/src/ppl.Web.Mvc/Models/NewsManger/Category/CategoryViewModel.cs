@@ -1,4 +1,5 @@
 ﻿using ppl.NewsCategorys;
+using ppl.NewsCategorys.Dto;
 using ppl.Web.Models.Common;
 using ppl.Web.Models.NewsManger.NewsList;
 using System;
@@ -10,6 +11,6 @@ namespace ppl.Web.Models.NewsManger.Category
 {
     public class CategoryViewModel: PageListViewModelBase
     {
-        public virtual List<NewsCategory> NewsCategories { get; set; } 
+        public virtual List<NewsCategoryDto> NewsCategories { get; set; } 
     }
 }

@@ -26,19 +26,17 @@ namespace ppl.Web.Mvc.Controllers
         public async Task<IActionResult> Index(PageRequestBase input)
         {
             var category = _categoryAppService.GetAll();
-            var seachlist = category.Where(x => x.CategoryName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime).ToList();
-            var Count = seachlist.Count();
+            var seachlist =ObjectMapper.Map<List<NewsCategoryDto>>(category.Where(x => x.CategoryName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime).ToList());
             seachlist = seachlist.Skip(input.SkipCount).Take(input.PageSize).ToList();
             var model = new CategoryViewModel()
             {
                 NewsCategories=seachlist,
-                TotalCount=Count,
+                TotalCount=seachlist.Count,
                 PageIndex=input.PageIndex,
                 HasNextPage=input.NextPage,
                 PageSize=input.PageSize,
                 HasPreviousPage=input.HasPreviousPage,
                 TotalPageCount=input.PageCount,
-                
             };
             return View(model);
         }
