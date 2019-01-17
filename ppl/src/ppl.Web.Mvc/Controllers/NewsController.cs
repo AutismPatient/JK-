@@ -46,40 +46,18 @@ namespace ppl.Web.Mvc.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> NewsIndex(SeacrhNewsDto input)
+        public async Task<IActionResult> NewsIndex(PageRequestBase input)
         {
-            input.PageIndex= input.PageIndex == null || input.PageIndex<0 ? 1 : input.PageIndex;
-            input.PageSize = input.PageSize == null ? 15 : input.PageSize;
-            input.SearchedName = input.SearchedName == null ? "" : input.SearchedName;
             var model =_newsMangerAppService.GetAll().Where(x => x.Title.Contains(input.SearchedName)).OrderByDescending(x => x.PageView).ToList();
             var count = model.Count();
-            var PageCount = count / input.PageSize.Value;//总页数
-            var dataMaxPageCount = (count % input.PageSize.Value) != 0;//判断是否整除（有余数就加一页）
-            PageCount = dataMaxPageCount || PageCount==0 ? PageCount + 1 : PageCount;
-            if (count != 0)
-            {
-                if (input.PageIndex > PageCount)
-                {
-                    input.PageIndex = PageCount;
-                }
-            }
-            else
-            {
-                if (input.PageIndex > PageCount)
-                {
-                    input.PageIndex = 1;
-                }
-            }
-            var HasNextPage = PageCount - input.PageIndex.Value > 0 ? true : false;//是否有下一页
-            var HasPreviousPage = input.PageIndex != 1 ? true : false;
-            model = model.Skip((input.PageIndex.Value - 1) * input.PageSize.Value).Take(input.PageSize.Value).ToList();
+            model = model.Skip(input.SkipCount).Take(input.PageSize).ToList();
             NewsCategoryDto newsCategory=new NewsCategoryDto();
             model.ForEach(async s =>
             {
-                newsCategory =this.ObjectMapper.Map(_categoryAppService.GetAll().Result.FirstOrDefault(x => x.Id == s.Id),newsCategory);
+                newsCategory =this.ObjectMapper.Map(_categoryAppService.GetAll().FirstOrDefault(x => x.Id == s.Id),newsCategory);
                 s.Author =ObjectMapper.Map<UserDto>(await this._userManager.GetUserByIdAsync(s.UserId));
             });
-            var categorylist =await _categoryAppService.GetAll();
+            var categorylist =_categoryAppService.GetAll();
             var tagslist = await _newsTagAppService.GetAll();
             
             var list = new NewsListViewModel()
@@ -87,11 +65,11 @@ namespace ppl.Web.Mvc.Controllers
                 NewsList = model,
                 newsCategoryDtos=this.ObjectMapper.Map<List<NewsCategoryDto>>(categorylist),
                 TotalCount=count,
-                PageIndex=input.PageIndex.Value,
-                TotalPageCount=PageCount,
-                HasNextPage=HasNextPage,
-                HasPreviousPage=HasPreviousPage,
-                PageSize=input.PageSize.Value,
+                PageIndex=input.PageIndex,
+                TotalPageCount=input.PageCount,
+                HasNextPage=input.NextPage,
+                HasPreviousPage=input.HasPreviousPage,
+                PageSize=input.PageSize,
                 tags= this.ObjectMapper.Map<List<TagDto>>(tagslist),
             };
             return View(list);
@@ -103,7 +81,7 @@ namespace ppl.Web.Mvc.Controllers
             return View("_EditNewsModal",model);
         }
         [HttpPost]
-        public async Task<IActionResult>  Uploading(string L)
+        public async Task<IActionResult> Uploading(string L)
         {
             string urlname = "";
             var image = Request.Form.Files;
@@ -127,7 +105,7 @@ namespace ppl.Web.Mvc.Controllers
                         await file.CopyToAsync(fs);
                         fs.Flush();
                         fs.Close();
-                        urlname ="../../images/newsimages/"+ filename;
+                        urlname = string.Format("{0}/{1}",path,filename);
                     }
                 }
             }
