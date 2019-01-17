@@ -16,5 +16,9 @@ namespace ppl.Web.Host.Controllers
         {
             _antiforgery.SetCookieTokenAndHeader(HttpContext);
         }
+        public AntiforgeryTokenSet SetToken()
+        {
+            return _antiforgery.GetTokens(HttpContext);
+        }
     }
 }

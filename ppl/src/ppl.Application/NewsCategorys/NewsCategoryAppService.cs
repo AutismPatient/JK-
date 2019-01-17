@@ -101,9 +101,9 @@ namespace ppl.NewsCategorys
             };
         }
         [AbpAllowAnonymous]
-        public async Task<List<NewsCategory>> GetAll()
+        public List<NewsCategory> GetAll()
         {
-            return await _categoryRepository.GetAllListAsync(x=>!x.IsDeleted);
+            return _categoryRepository.GetAll().ToList();
         }
     }
 }

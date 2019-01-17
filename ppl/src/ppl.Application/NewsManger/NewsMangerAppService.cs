@@ -82,9 +82,6 @@ namespace ppl.NewsManger
                     throw new UserFriendlyException(L("标题请勿重复！"));
                 }
                 createOrUpdateNewsDto.UserId = AbpSession.UserId.Value;
-                createOrUpdateNewsDto.Audit = Audit.No;
-                createOrUpdateNewsDto.Status = Status.待审核;
-                createOrUpdateNewsDto.PageView = 0;
                 createOrUpdateNewsDto.CoverUrl = url;
                 var news = this._objectMapper.Map<News>(createOrUpdateNewsDto);
                 await _newsRepository.InsertAsync(news);
@@ -201,13 +198,16 @@ namespace ppl.NewsManger
         }
         public async Task<GetNewsEdit> GetNewsEdit(Abp.Application.Services.Dto.EntityDto<Guid> entity)
         {
+            var Getcategory = _categoryAppService.GetAll();
+            var GetTags = _tagRepository.GetAll();
             var news = await _newsRepository.GetAsync(entity.Id);
-            var category = _categoryAppService.GetAll().Result.FirstOrDefault(x => x.Id == news.CategoryId);
-            var listcategory = _objectMapper.Map<List<NewsCategoryDto>>(await _categoryRepository.GetAllListAsync());
+            var category = Getcategory.FirstOrDefault(x => x.Id == news.CategoryId);
+            var listcategory = _objectMapper.Map<List<NewsCategoryDto>>(Getcategory.ToList());
             var tags = _andrepository.GetAll().Where(x => x.NewsId == news.Id);
             var tagids = tags.Select(x => x.TagId).ToList();
-            var selectTag = _objectMapper.Map<List<TagDto>>(_newsTagAppService.GetAll().Result.Where(x => tagids.Contains(x.Id)));
-            var listtag = _objectMapper.Map<List<TagDto>>(_newsTagAppService.GetAll().Result.Where(x => !tagids.Contains(x.Id)));
+
+            var selectTag = _objectMapper.Map<List<TagDto>>(GetTags.Where(x => tagids.Contains(x.Id)));
+            var listtag = _objectMapper.Map<List<TagDto>>(GetTags.Where(x => !tagids.Contains(x.Id)));
             return new GetNewsEdit()
             {
                 News = _objectMapper.Map<NewsDto>(news),

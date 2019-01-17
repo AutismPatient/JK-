@@ -18,6 +18,6 @@ namespace ppl.NewsCategorys
         Task Delete(Guid entity);
         Task BatchDelete(string ListGuid);
         Task<CreateOrUpdateCategoryDto> GetCategoryEdit(EntityDto<Guid> entity);
-        Task<List<NewsCategory>> GetAll();
+        List<NewsCategory> GetAll();
     }
 }

@@ -12,5 +12,11 @@ namespace ppl.Web.Mvc.Controllers
         {
             return View();
         }
+        [HttpPost]
+        [Route("api/login")]
+        public async Task<IActionResult> Login()
+        {
+            return View();
+        }
     }
 }

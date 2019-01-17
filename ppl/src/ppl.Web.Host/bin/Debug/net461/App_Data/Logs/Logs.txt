@@ -1,0 +1,258 @@
+DEBUG 2019-01-17 11:18:37,298 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+FATAL 2019-01-17 11:18:38,150 [1    ] Abp.AbpBootstrapper                      - System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+=== 预绑定状态信息 ===
+日志: DisplayName = ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+ (Fully-specified)
+日志: Appbase = file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/
+日志: 初始 PrivatePath = NULL
+调用程序集: ppl.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: C:\Users\mengz\Source\Workspaces\MyFirstProject\资料库\ppl\src\ppl.Web.Host\bin\Debug\net461\ppl.Web.Host.exe.Config
+日志: 使用主机配置文件: 
+日志: 使用 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 此时没有为引用应用策略(私有、自定义、分部或基于位置的程序集绑定)。
+日志: 尝试下载新的 URL file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/ppl.Application.DLL。
+错误: 未能完成程序集的安装(hr = 0x8007000b)。探测终止。
+
+System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+=== 预绑定状态信息 ===
+日志: DisplayName = ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+ (Fully-specified)
+日志: Appbase = file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/
+日志: 初始 PrivatePath = NULL
+调用程序集: ppl.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: C:\Users\mengz\Source\Workspaces\MyFirstProject\资料库\ppl\src\ppl.Web.Host\bin\Debug\net461\ppl.Web.Host.exe.Config
+日志: 使用主机配置文件: 
+日志: 使用 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 此时没有为引用应用策略(私有、自定义、分部或基于位置的程序集绑定)。
+日志: 尝试下载新的 URL file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/ppl.Application.DLL。
+错误: 未能完成程序集的安装(hr = 0x8007000b)。探测终止。
+
+DEBUG 2019-01-17 11:19:16,575 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+FATAL 2019-01-17 11:19:16,656 [1    ] Abp.AbpBootstrapper                      - System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+FATAL 2019-01-17 11:19:16,736 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+   在 Abp.AspNetCore.AbpApplicationBuilderExtensions.InitializeAbp(IApplicationBuilder app)
+   在 Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction)
+   在 ppl.Web.Host.Startup.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   在 Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+INFO  2019-01-17 11:19:18,138 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-01-17 11:19:18,649 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 524.9914ms 500 text/html; charset=utf-8
+INFO  2019-01-17 11:19:20,560 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/favicon.ico  
+INFO  2019-01-17 11:19:20,577 [11   ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 16.3052ms 500 text/html; charset=utf-8
+DEBUG 2019-01-17 11:27:55,574 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+FATAL 2019-01-17 11:27:55,690 [1    ] Abp.AbpBootstrapper                      - System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+=== 预绑定状态信息 ===
+日志: DisplayName = ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+ (Fully-specified)
+日志: Appbase = file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/
+日志: 初始 PrivatePath = NULL
+调用程序集: ppl.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: C:\Users\mengz\Source\Workspaces\MyFirstProject\资料库\ppl\src\ppl.Web.Host\bin\Debug\net461\ppl.Web.Host.exe.Config
+日志: 使用主机配置文件: 
+日志: 使用 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 此时没有为引用应用策略(私有、自定义、分部或基于位置的程序集绑定)。
+日志: 尝试下载新的 URL file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/ppl.Application.DLL。
+错误: 未能完成程序集的安装(hr = 0x8007000b)。探测终止。
+
+System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+=== 预绑定状态信息 ===
+日志: DisplayName = ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+ (Fully-specified)
+日志: Appbase = file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/
+日志: 初始 PrivatePath = NULL
+调用程序集: ppl.Web.Core, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null。
+===
+日志: 此绑定从 default 加载上下文开始。
+日志: 正在使用应用程序配置文件: C:\Users\mengz\Source\Workspaces\MyFirstProject\资料库\ppl\src\ppl.Web.Host\bin\Debug\net461\ppl.Web.Host.exe.Config
+日志: 使用主机配置文件: 
+日志: 使用 C:\Windows\Microsoft.NET\Framework64\v4.0.30319\config\machine.config 的计算机配置文件。
+日志: 此时没有为引用应用策略(私有、自定义、分部或基于位置的程序集绑定)。
+日志: 尝试下载新的 URL file:///C:/Users/mengz/Source/Workspaces/MyFirstProject/资料库/ppl/src/ppl.Web.Host/bin/Debug/net461/ppl.Application.DLL。
+错误: 未能完成程序集的安装(hr = 0x8007000b)。探测终止。
+
+DEBUG 2019-01-17 11:28:10,271 [1    ] Abp.Modules.AbpModuleManager             - Loading Abp modules...
+FATAL 2019-01-17 11:28:10,337 [1    ] Abp.AbpBootstrapper                      - System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+FATAL 2019-01-17 11:28:10,367 [1    ] soft.AspNetCore.Hosting.Internal.WebHost - Application startup exception
+System.BadImageFormatException: 未能加载文件或程序集“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”或它的某一个依赖项。试图加载格式不正确的程序。
+文件名:“ppl.Application, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null”
+   在 System.Reflection.CustomAttribute._CreateCaObject(RuntimeModule pModule, IRuntimeMethodInfo pCtor, Byte** ppBlob, Byte* pEndBlob, Int32* pcNamedArgs)
+   在 System.Reflection.CustomAttribute.CreateCaObject(RuntimeModule module, IRuntimeMethodInfo ctor, IntPtr& blob, IntPtr blobEnd, Int32& namedArgs)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeModule decoratedModule, Int32 decoratedMetadataToken, Int32 pcaCount, RuntimeType attributeFilterType, Boolean mustBeInheritable, IList derivedAttributes, Boolean isDecoratedTargetSecurityTransparent)
+   在 System.Reflection.CustomAttribute.GetCustomAttributes(RuntimeType type, RuntimeType caType, Boolean inherit)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypes(Type moduleType)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.AddModuleAndDependenciesRecursively(List`1 modules, Type module)
+   在 Abp.Modules.AbpModule.FindDependedModuleTypesRecursivelyIncludingGivenModule(Type moduleType)
+   在 Abp.Modules.AbpModuleManager.FindAllModuleTypes(List`1& plugInModuleTypes)
+   在 Abp.Modules.AbpModuleManager.LoadAllModules()
+   在 Abp.AbpBootstrapper.Initialize()
+   在 Abp.AspNetCore.AbpApplicationBuilderExtensions.InitializeAbp(IApplicationBuilder app)
+   在 Abp.AspNetCore.AbpApplicationBuilderExtensions.UseAbp(IApplicationBuilder app, Action`1 optionsAction)
+   在 ppl.Web.Host.Startup.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+--- 引发异常的上一位置中堆栈跟踪的末尾 ---
+   在 System.Runtime.ExceptionServices.ExceptionDispatchInfo.Throw()
+   在 Microsoft.AspNetCore.Hosting.ConventionBasedStartup.Configure(IApplicationBuilder app)
+   在 Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+
+警告: 程序集绑定日志记录被关闭。
+要启用程序集绑定失败日志记录，请将注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog] (DWORD)设置为 1。
+注意: 会有一些与程序集绑定失败日志记录关联的性能损失。
+要关闭此功能，请移除注册表值 [HKLM\Software\Microsoft\Fusion!EnableLog]。
+
+INFO  2019-01-17 11:28:10,788 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/  
+INFO  2019-01-17 11:28:11,216 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 398.3992ms 500 text/html; charset=utf-8
+INFO  2019-01-17 11:28:12,656 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request starting HTTP/1.1 GET http://localhost:21021/favicon.ico  
+INFO  2019-01-17 11:28:12,668 [7    ] soft.AspNetCore.Hosting.Internal.WebHost - Request finished in 12.2426ms 500 text/html; charset=utf-8

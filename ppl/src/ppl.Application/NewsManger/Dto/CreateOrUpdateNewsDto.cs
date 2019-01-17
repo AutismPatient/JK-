@@ -17,6 +17,10 @@ namespace ppl.NewsManger.Dto
     
     public class CreateOrUpdateNewsDto : FullAuditedEntityDto<Guid>
     {
+        public CreateOrUpdateNewsDto()
+        {
+            
+        }
         /// <summary>
         /// 标题
         /// </summary>
@@ -48,15 +52,15 @@ namespace ppl.NewsManger.Dto
         /// <summary>
         /// 审核
         /// </summary>
-        public virtual Audit Audit { get { return Audit; } set { } }
+        public virtual Audit Audit { get; set; } = Audit.No;
         /// <summary>
         /// 状态
         /// </summary>
-        public virtual Status Status { get; set; }
+        public virtual Status Status { get; set; } = Status.待审核;
         /// <summary>
         /// 用户浏览量
         /// </summary>
-        public virtual int PageView { get; set; }
+        public virtual int PageView { get; set; } = 0;
         /// <summary>
         /// 作者ID
         /// </summary>
