@@ -3,6 +3,7 @@ using Microsoft.Extensions.Configuration;
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using ppl.Configuration;
+using Abp.AspNetCore.Configuration;
 
 namespace ppl.Web.Startup
 {
@@ -21,6 +22,7 @@ namespace ppl.Web.Startup
         public override void PreInitialize()
         {
             Configuration.Navigation.Providers.Add<pplNavigationProvider>();
+            Configuration.Modules.AbpAspNetCore().CreateControllersForAppServices(typeof(pplApplicationModule).Assembly, moduleName:"app", useConventionalHttpVerbs: true);
         }
 
         public override void Initialize()

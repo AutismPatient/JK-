@@ -2,6 +2,7 @@
 using Abp.Modules;
 using Abp.Reflection.Extensions;
 using ppl.Authorization;
+using ppl.Users;
 
 namespace ppl
 {
@@ -14,6 +15,7 @@ namespace ppl
         {
             Configuration.Authorization.Providers.Add<pplAuthorizationProvider>();
             Configuration.Settings.Providers.Add<MySettingProvider>();
+
         }
 
         public override void Initialize()
@@ -26,6 +28,7 @@ namespace ppl
                 // Scan the assembly for classes which inherit from AutoMapper.Profile
                 cfg => cfg.AddProfiles(thisAssembly)
             );
+            
         }
     }
 }

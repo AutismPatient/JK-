@@ -50,5 +50,6 @@ namespace ppl.Authorization.Accounts
                 CanLogin = user.IsActive && (user.IsEmailConfirmed || !isEmailConfirmationRequiredForLogin)
             };
         }
+
     }
 }

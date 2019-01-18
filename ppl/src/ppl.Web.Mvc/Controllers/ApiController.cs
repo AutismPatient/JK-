@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using ppl.Controllers;
 
 namespace ppl.Web.Mvc.Controllers
 {
-    public class ApiController : Controller
+    public class ApiController : pplControllerBase
     {
         public IActionResult Index()
         {
@@ -14,9 +15,9 @@ namespace ppl.Web.Mvc.Controllers
         }
         [HttpPost]
         [Route("api/login")]
-        public async Task<IActionResult> Login()
+        public IActionResult Login()
         {
-            return View();
+            return new JsonResult("s");
         }
     }
 }

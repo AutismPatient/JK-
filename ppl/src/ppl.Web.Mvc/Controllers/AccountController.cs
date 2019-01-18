@@ -106,8 +106,13 @@ namespace ppl.Web.Controllers
             return Json(new AjaxResponse { TargetUrl = returnUrl });
         }
 
-        public async Task<ActionResult> Logout()
+        public async Task<ActionResult> Logout(string returnUrl="")
         {
+            if (!string.IsNullOrEmpty(returnUrl))
+            {
+                NormalizeReturnUrl(returnUrl);
+                return RedirectToAction(returnUrl);
+            }
             await _signInManager.SignOutAsync();
             return RedirectToAction("Login");
         }
