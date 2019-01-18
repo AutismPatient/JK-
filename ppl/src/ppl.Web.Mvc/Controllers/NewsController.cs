@@ -49,7 +49,6 @@ namespace ppl.Web.Mvc.Controllers
         public async Task<IActionResult> NewsIndex(PageRequestBase input)
         {
             var model =_newsMangerAppService.GetAll().Where(x => x.Title.Contains(input.SearchedName)).OrderByDescending(x => x.PageView).ToList();
-            var count = model.Count();
             model = model.Skip(input.SkipCount).Take(input.PageSize).ToList();
             NewsCategoryDto newsCategory=new NewsCategoryDto();
             model.ForEach(async s =>
@@ -59,12 +58,11 @@ namespace ppl.Web.Mvc.Controllers
             });
             var categorylist =_categoryAppService.GetAll();
             var tagslist = await _newsTagAppService.GetAll();
-            
             var list = new NewsListViewModel()
             {
                 NewsList = model,
                 newsCategoryDtos=this.ObjectMapper.Map<List<NewsCategoryDto>>(categorylist),
-                TotalCount=count,
+                TotalCount=model.Count,
                 PageIndex=input.PageIndex,
                 TotalPageCount=input.PageCount,
                 HasNextPage=input.NextPage,

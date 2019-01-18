@@ -79,7 +79,6 @@ namespace ppl.Web.Controllers
             {
                 returnUrl = GetAppHomeUrl();
             }
-
             return View(new LoginFormViewModel
             {
                 ReturnUrl = returnUrl,
