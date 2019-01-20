@@ -9,11 +9,10 @@ using System.Threading.Tasks;
 namespace ppl.NewsCategorys.Dto
 {
     [AutoMapTo(typeof(NewsCategory))]
-    public class NewsCategoryDto:EntityDto<Guid>
+    public class NewsCategoryDto: FullAuditedEntityDto<Guid>
     {
         
         public string CategoryName { get; set; }
-        public DateTime CreationTime { get ; set ; }
         public NewsCategoryDto()
         {
             CreationTime = DateTime.Now;

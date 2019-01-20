@@ -78,42 +78,4 @@ Global
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {878D6F2D-D46B-42E5-AECD-D544D17A31BA}
 	EndGlobalSection
-	GlobalSection(TeamFoundationVersionControl) = preSolution
-		SccNumberOfProjects = 9
-		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://kuaitan.visualstudio.com/
-		SccLocalPath0 = .
-		SccProjectUniqueName1 = src\\ppl.Application\\ppl.Application.csproj
-		SccProjectTopLevelParentUniqueName1 = ppl.sln
-		SccProjectName1 = src/ppl.Application
-		SccLocalPath1 = src\\ppl.Application
-		SccProjectUniqueName2 = src\\ppl.Core\\ppl.Core.csproj
-		SccProjectTopLevelParentUniqueName2 = ppl.sln
-		SccProjectName2 = src/ppl.Core
-		SccLocalPath2 = src\\ppl.Core
-		SccProjectUniqueName3 = src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj
-		SccProjectTopLevelParentUniqueName3 = ppl.sln
-		SccProjectName3 = src/ppl.EntityFrameworkCore
-		SccLocalPath3 = src\\ppl.EntityFrameworkCore
-		SccProjectUniqueName4 = src\\ppl.Migrator\\ppl.Migrator.csproj
-		SccProjectTopLevelParentUniqueName4 = ppl.sln
-		SccProjectName4 = src/ppl.Migrator
-		SccLocalPath4 = src\\ppl.Migrator
-		SccProjectUniqueName5 = src\\ppl.Web.Core\\ppl.Web.Core.csproj
-		SccProjectTopLevelParentUniqueName5 = ppl.sln
-		SccProjectName5 = src/ppl.Web.Core
-		SccLocalPath5 = src\\ppl.Web.Core
-		SccProjectUniqueName6 = src\\ppl.Web.Host\\ppl.Web.Host.csproj
-		SccProjectTopLevelParentUniqueName6 = ppl.sln
-		SccProjectName6 = src/ppl.Web.Host
-		SccLocalPath6 = src\\ppl.Web.Host
-		SccProjectUniqueName7 = src\\ppl.Web.Mvc\\ppl.Web.Mvc.csproj
-		SccProjectTopLevelParentUniqueName7 = ppl.sln
-		SccProjectName7 = src/ppl.Web.Mvc
-		SccLocalPath7 = src\\ppl.Web.Mvc
-		SccProjectUniqueName8 = test\\ppl.Tests\\ppl.Tests.csproj
-		SccProjectTopLevelParentUniqueName8 = ppl.sln
-		SccProjectName8 = test/ppl.Tests
-		SccLocalPath8 = test\\ppl.Tests
-	EndGlobalSection
 EndGlobal
