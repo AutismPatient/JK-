@@ -91,7 +91,7 @@ Write(Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderV
             WriteLiteral("\r\n<div class=\"modal-body\">\r\n    ");
             EndContext();
             BeginContext(415, 8285, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4f640db1e549443d93a41bc82b474217", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a4762d538a294bdca8c3ba767cab9c32", async() => {
                 BeginContext(518, 48, true);
                 WriteLiteral("\r\n        <input type=\"hidden\" name=\"Id\" id=\"Id\"");
                 EndContext();
@@ -217,7 +217,7 @@ WriteAttributeValue("", 2031, MaxAbstractLength, 2031, 18, false);
                 WriteLiteral("                                            ");
                 EndContext();
                 BeginContext(2959, 88, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "93271efab61149d2ab7046f316963100", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "db103fabde774d91a0c8ef6aa06c97c9", async() => {
                     BeginContext(2996, 41, false);
 #line 51 "C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\Views\News\_EditNewsModal.cshtml"
                                                                            Write(typename.Equals("Quality") ? "高质量" : "普通");
@@ -263,7 +263,7 @@ WriteAttributeValue("", 2031, MaxAbstractLength, 2031, 18, false);
                 WriteLiteral("                                            ");
                 EndContext();
                 BeginContext(3225, 79, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7d3c2a36119f442a8f20543800ab389d", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "64432f6f03854986a6a74295103eb7cd", async() => {
                     BeginContext(3253, 41, false);
 #line 55 "C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\Views\News\_EditNewsModal.cshtml"
                                                                   Write(typename.Equals("Quality") ? "高质量" : "普通");
@@ -332,7 +332,7 @@ WriteAttributeValue("", 2031, MaxAbstractLength, 2031, 18, false);
                 WriteLiteral("                                                ");
                 EndContext();
                 BeginContext(4218, 69, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "6fb28edca79e4a58bbee2bb640112031", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1d209b78f7ba463db15a3178ade08a15", async() => {
                     BeginContext(4257, 21, false);
 #line 73 "C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\Views\News\_EditNewsModal.cshtml"
                                                                                  Write(category.CategoryName);
@@ -378,7 +378,7 @@ WriteAttributeValue("", 2031, MaxAbstractLength, 2031, 18, false);
                 WriteLiteral("                                                ");
                 EndContext();
                 BeginContext(4481, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "92b7ca415faf480682eb1e62cb59df3a", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9c594dd2e32441b792371b6121a47398", async() => {
                     BeginContext(4511, 21, false);
 #line 77 "C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\Views\News\_EditNewsModal.cshtml"
                                                                         Write(category.CategoryName);
@@ -428,7 +428,7 @@ WriteAttributeValue("", 2031, MaxAbstractLength, 2031, 18, false);
                 WriteLiteral("                                        ");
                 EndContext();
                 BeginContext(4793, 25, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1de46ddee89a49e0a02fea691463a194", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "61184cb2053343c3a43cd0d551642151", async() => {
                     BeginContext(4801, 8, true);
                     WriteLiteral("暂时没有新闻类别");
                     EndContext();
@@ -706,7 +706,7 @@ Write(Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(8787, 97, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bb6ca06493ad4e03b497c0349273630f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0b6c76d27c0a4e098c95cd3624d0773b", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
