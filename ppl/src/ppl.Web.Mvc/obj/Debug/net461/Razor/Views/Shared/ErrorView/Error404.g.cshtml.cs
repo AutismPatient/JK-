@@ -58,7 +58,7 @@ using Abp.Localization;
             WriteLiteral("\r\n<!DOCTYPE html>\r\n\r\n<html>\r\n");
             EndContext();
             BeginContext(58, 103, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "75e09add743b4773875f004261b13c79", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("head", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "28fbb5a33b00480a897807ee6f616842", async() => {
                 BeginContext(64, 90, true);
                 WriteLiteral("\r\n    <meta name=\"viewport\" content=\"width=device-width\" />\r\n    <title>Error404</title>\r\n");
                 EndContext();
@@ -78,7 +78,7 @@ using Abp.Localization;
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(163, 15, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "9f4c436c47394698ab7a4510a0bdf525", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("body", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "df1f0a75345643aebea9451a7226e23f", async() => {
                 BeginContext(169, 2, true);
                 WriteLiteral("\r\n");
                 EndContext();

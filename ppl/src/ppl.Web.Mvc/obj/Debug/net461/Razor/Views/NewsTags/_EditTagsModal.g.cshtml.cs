@@ -73,7 +73,7 @@ Write(Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderV
             WriteLiteral("\r\n<div class=\"modal-body\">\r\n    ");
             EndContext();
             BeginContext(246, 652, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "96ca86f8f1b148d489311e386713d36c", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c373fed555a541b78393e0f7a142188f", async() => {
                 BeginContext(315, 40, true);
                 WriteLiteral("\r\n        <input type=\"hidden\" name=\"Id\"");
                 EndContext();
@@ -131,7 +131,7 @@ Write(Html.Partial("~/Views/Shared/Modals/_ModalFooterWithSaveAndCancel.cshtml")
             WriteLiteral("\r\n");
             EndContext();
             BeginContext(985, 89, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "f396f2cea2eb476eaabdeefcf28f3b35", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "8acbed5f6158460284219a0e0480e0ba", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

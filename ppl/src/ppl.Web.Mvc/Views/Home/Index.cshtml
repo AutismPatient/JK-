@@ -30,13 +30,10 @@
 <div class="block-header">
     <h1>
         工作台   <small>统计数据与报告 </small> <small class="right">
-            <button class="btn btn-primary btn-sm">
-                <i class="material-icons">
-                    refresh
-                </i> 刷新
-            </button> <button class="btn btn-primary btn-sm">
-                <i class="material-icons">
-                    report
+            <button class="btn btn-default btn-sm"> 刷新
+            </button> <button class="btn btn-default btn-sm">
+                <i class="material-icons" style="font-size:15px;">
+                    settings
                 </i>  设置仪表盘参数
             </button>
         </small>
@@ -92,21 +89,21 @@
     <div class="info-fox col-md-3">
         <div class="number-info">
             <div class="number-title">
-                <h3 class="text-primary">671</h3>
-                <p>新的数据</p>
+                <h3 class="text-1">45</h3>
+                <p>新的资料数据</p>
             </div>
             <div class="icon-info">
-                <i class="material-icons">playlist_add_check</i>
+                <i class="material-icons">receipt</i>
             </div>
         </div>
         <div class="progress-info">
             <div class="progress-box">
-                <span style="width: 60%;" class="progress-color">
+                <span style="width: 79%;" class="back-1">
                 </span>
             </div>
             <div class="progress-status">
                 <p>
-                    @DateTime.Now.ToString("YYYY年MM月DD日") - @DateTime.Now.ToShortDateString() <font class="right">60%</font>
+                    @DateTime.Now.ToString("D") - @DateTime.Now.ToString("D") <font class="right">79%</font>
                 </p>
             </div>
         </div>
@@ -114,21 +111,21 @@
     <div class="info-fox col-md-3">
         <div class="number-info">
             <div class="number-title">
-                <h3 class="text-info">671</h3>
-                <p>新的数据</p>
+                <h3 class="text-2">146</h3>
+                <p>最近增长</p>
             </div>
             <div class="icon-info">
-                <i class="material-icons">playlist_add_check</i>
+                <i class="material-icons">flight_takeoff</i>
             </div>
         </div>
         <div class="progress-info">
             <div class="progress-box">
-                <span style="width: 60%;" class="progress-color">
+                <span style="width: 67%;" class="back-2">
                 </span>
             </div>
             <div class="progress-status">
                 <p>
-                    @DateTime.Now.ToString("YYYY年MM月DD日") - @DateTime.Now.ToShortDateString() <font class="right">60%</font>
+                    @DateTime.Now.ToString("D") - @DateTime.Now.ToString("D") <font class="right">67%</font>
                 </p>
             </div>
         </div>
@@ -136,21 +133,21 @@
     <div class="info-fox col-md-3">
         <div class="number-info">
             <div class="number-title">
-                <h3 class="text-success">671</h3>
-                <p>新的数据</p>
+                <h3 class="text-3">671</h3>
+                <p>用户意见</p>
             </div>
             <div class="icon-info">
-                <i class="material-icons">playlist_add_check</i>
+                <i class="material-icons">pan_tool</i>
             </div>
         </div>
         <div class="progress-info">
             <div class="progress-box">
-                <span style="width: 60%;" class="progress-color">
+                <span style="width: 60%;" class="back-3">
                 </span>
             </div>
             <div class="progress-status">
                 <p>
-                    @DateTime.Now.ToString("YYYY年MM月DD日") - @DateTime.Now.ToShortDateString() <font class="right">60%</font>
+                    @DateTime.Now.ToString("D") - @DateTime.Now.ToString("D") <font class="right">60%</font>
                 </p>
             </div>
         </div>
@@ -158,42 +155,41 @@
     <div class="info-fox col-md-3">
         <div class="number-info">
             <div class="number-title">
-                <h3 class="text-warning">671</h3>
-                <p>新的数据</p>
+                <h3 class="text-4">90</h3>
+                <p>持续性</p>
             </div>
             <div class="icon-info">
-                <i class="material-icons">playlist_add_check</i>
+                <i class="material-icons">assignment_turned_in</i>
             </div>
         </div>
         <div class="progress-info">
             <div class="progress-box">
-                <span style="width: 60%;" class="progress-color">
+                <span style="width: 34%;" class="back-4">
                 </span>
             </div>
             <div class="progress-status">
                 <p>
-                    @DateTime.Now.ToString("YYYY年MM月DD日") - @DateTime.Now.ToShortDateString() <font class="right">60%</font>
+                    @DateTime.Now.ToString("D") - @DateTime.Now.ToString("D") <font class="right">34%</font>
                 </p>
             </div>
         </div>
     </div>
 </div>
-@*<div class="row clearfix">
+<div class="row clearfix data_info">
         <!-- Task Info -->
         <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
             <div class="card">
                 <div class="header">
-                    <h2>TASK INFOS</h2>
+                    <h2 class="title-data">资料数据概况 <small>2019年7月-2019年12月</small></h2>
                     <ul class="header-dropdown m-r--5">
                         <li class="dropdown">
-                            <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                <i class="material-icons">more_vert</i>
-                            </a>
-                            <ul class="dropdown-menu pull-right">
-                                <li><a href="javascript:void(0);">Action</a></li>
-                                <li><a href="javascript:void(0);">Another action</a></li>
-                                <li><a href="javascript:void(0);">Something else here</a></li>
-                            </ul>
+                            <button class="btn btn-sm btn-outline btn-primary">每周</button>
+                        </li>
+                        <li class="dropdown">
+                            <button class="btn btn-sm btn-outline btn-primary">每日</button>
+                        </li>
+                        <li class="dropdown">
+                            <button class="btn btn-sm btn-outline btn-primary">每月</button>
                         </li>
                     </ul>
                 </div>
@@ -298,4 +294,4 @@
             </div>
         </div>
         <!-- #END# Browser Usage -->
-    </div>*@
+    </div>

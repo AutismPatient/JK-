@@ -74,12 +74,12 @@ using static ppl.JklConsts;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(254, 153, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "a28ccd4601684d799de46638adbe2bba", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "22a534371a754daab08945a7c98b7294", async() => {
                     BeginContext(287, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(297, 90, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0d59ab05ce7544ceae7841ac5e4a2d9f", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "aac4214af467481cb5cf5ec654b6fd6b", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -681,7 +681,7 @@ WriteAttributeValue("", 9926, Model.TotalPageCount, 9926, 21, false);
             WriteLiteral("             </h4>\r\n            </div>\r\n            <div class=\"modal-body\">\r\n                ");
             EndContext();
             BeginContext(11066, 1328, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "49090347f1ac4b38b7faebb0d9f198d5", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "af0605d5b1a04bfca9e82f0db8829e64", async() => {
                 BeginContext(11141, 434, true);
                 WriteLiteral(@"
                     <div id=""create-news-details"" class=""tab-pane animated fadeIn active"">
