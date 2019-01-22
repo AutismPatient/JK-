@@ -10296,9 +10296,9 @@ fieldset[disabled] .form-control {
                         content: '\E315';
                         font-family: 'Material Icons';
                         position: relative;
-                        font-size: 21px;
+                        font-size: 23px;
                         height: 20px;
-                        top: -5px;
+                        top: -2px;
                         right: 0px;
                     }
 

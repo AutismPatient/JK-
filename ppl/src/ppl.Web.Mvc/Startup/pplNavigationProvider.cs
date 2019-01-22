@@ -18,7 +18,6 @@ namespace ppl.Web.Startup
                         L("HomePage"),
                         url: "",
                         icon: "home"
-                        
                     )
                 )
                 .AddItem(
@@ -32,7 +31,6 @@ namespace ppl.Web.Startup
                         "NewsList",
                         L("DatabaseManagement"),
                         url: "/News/NewsIndex",
-                        icon: "receipt",
                         requiredPermissionName:PermissionNames.Pages_NewsManger
                         ))
                         .AddItem(
@@ -40,7 +38,6 @@ namespace ppl.Web.Startup
                             "NewTag",
                             L("LabelItem"),
                             url:"/NewsTags/Index",
-                            icon:"loyalty",
                             requiredPermissionName:PermissionNames.Pages_Tags
                             ))
                             .AddItem(
@@ -48,7 +45,6 @@ namespace ppl.Web.Startup
                             "NewsCategory",
                             L("CategoryItem"),
                             url: "/NewsCategorys/Index",
-                            icon: "list",
                             requiredPermissionName:PermissionNames.Pages_Category
                             ))
                     )
@@ -61,14 +57,12 @@ namespace ppl.Web.Startup
                             "WebParameter",
                             L("WebParameter"),
                             url: "/WebSetting/EditForWeb",
-                            icon: "build",
                             requiredPermissionName:PermissionNames.Pages_WebParameter
                             ))
                             .AddItem(new MenuItemDefinition(
                                 "FeedBack",
                                 L("FeedBack"),
                                 url:"/FeedBack",
-                                icon:"feedback",
                                 requiredPermissionName:PermissionNames.Pages_FeedBack
                                 ))
                         )

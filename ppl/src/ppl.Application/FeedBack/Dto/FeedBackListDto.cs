@@ -8,6 +8,5 @@ namespace ppl.FeedBack.Dto
 {
     public class FeedBackListDto:PageRequestBase
     {
-
     }
 }

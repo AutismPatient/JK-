@@ -11,22 +11,24 @@ namespace ppl
     /// <summary>
     /// 分页基类
     /// </summary>
-    public class PageRequestBase : IPagedResultRequest
+    public class PageRequestBase 
     {
         int pageindex;
         int pagecount;
         int pagesize = 10;
-        int Count;
+        public int Count;
         int skip;
+        bool nextpage;
+        bool hasPreviousPage;
+        string name="";
         public PageRequestBase()
         {
-
+            
         }
         /// <summary>
         /// 搜索词
         /// </summary>
-        [StringLength(16, MinimumLength = 1)]
-        public string SearchedName { get; set; }
+        public string SearchedName { get { return name ; } set { if (SearchedName == null) value = name; } }
         /// <summary>
         /// 跳列数
         /// </summary>
@@ -38,13 +40,8 @@ namespace ppl
             }
         }
         /// <summary>
-        /// 最大返回值
-        /// </summary>
-        public int MaxResultCount { get=> Count; set { if(Count>0) value = Count; } }
-        /// <summary>
         /// 当前页数
         /// </summary>
-        [Range(1, int.MaxValue)]
         public int PageIndex
         {
             get { return pageindex; }
@@ -62,7 +59,6 @@ namespace ppl
         /// <summary>
         /// 每页显示条数
         /// </summary>
-        [Range(5, int.MaxValue)]
         public int PageSize
         {
             get { return pagesize; }
@@ -92,13 +88,13 @@ namespace ppl
         /// </summary>
         public bool NextPage
         {
-            get { return NextPage; }
+            get { return nextpage; }
             set
             {
                 if (PageCount - PageIndex > 0)
-                    value = true;
+                    nextpage = true;
                 else
-                    value = false;
+                    nextpage = false;
             }
         }
         /// <summary>
@@ -106,13 +102,13 @@ namespace ppl
         /// </summary>
         public bool HasPreviousPage
         {
-            get { return HasPreviousPage; }
+            get { return hasPreviousPage; }
             set
             {
                 if (PageIndex >= 1)
-                    value = true;
+                    hasPreviousPage = true;
                 else
-                    value = false;
+                    hasPreviousPage = false;
             }
         }
     }
