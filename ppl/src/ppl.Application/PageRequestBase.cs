@@ -76,10 +76,14 @@ namespace ppl
             get { return pagecount; }
             set
             {
-                if (Count > 0)
+                if (value > 0)
                 {
                     double count = Count / PageSize;
                     pagecount = (int)Math.Ceiling(count);
+                }
+                else
+                {
+                    pagecount = 0;
                 }
             }
         }

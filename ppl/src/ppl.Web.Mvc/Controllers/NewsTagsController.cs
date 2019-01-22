@@ -25,6 +25,7 @@ namespace ppl.Web.Mvc.Controllers
         {
             var tag = await _tagAppService.GetAll();
             input.Count = tag.Count;
+            var input1 = new PageRequestBase { };
             var seachlist = tag.Where(x => x.TagName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime).ToList();
             seachlist = seachlist.Skip(input.SkipCount).Take(input.PageSize).ToList();
             var model = new TagViewModel()
