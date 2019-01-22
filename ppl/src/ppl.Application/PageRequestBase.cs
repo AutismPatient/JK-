@@ -13,7 +13,7 @@ namespace ppl
     /// </summary>
     public class PageRequestBase 
     {
-        int pageindex;
+        int pageindex=1;
         int pagecount;
         int pagesize = 10;
         public int Count;
