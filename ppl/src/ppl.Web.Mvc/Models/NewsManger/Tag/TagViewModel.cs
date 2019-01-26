@@ -11,6 +11,6 @@ namespace ppl.Web.Models.NewsManger.Tag
 {
     public class TagViewModel: PageListViewModelBase
     {
-        public virtual List<NewsTags> NewsTags { get; set; }
+        public virtual IReadOnlyList<TagDto> NewsTags { get; set; }
     }
 }

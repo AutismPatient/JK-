@@ -16,26 +16,26 @@ using System.Threading.Tasks;
 namespace ppl.NewsCategorys
 {
     [AbpAuthorize(PermissionNames.Pages_Category)]
-    public class NewsCategoryAppService: pplAppServiceBase,INewsCategoryAppService
+    public class NewsCategoryAppService : pplAppServiceBase, INewsCategoryAppService
     {
-        protected readonly IRepository<NewsCategory,Guid> _categoryRepository;
+        protected readonly IRepository<NewsCategory, Guid> _categoryRepository;
         private readonly IObjectMapper _objectMapper;
-        public NewsCategoryAppService(IRepository<NewsCategory,Guid> repository,IObjectMapper objectMapper)
+        public NewsCategoryAppService(IRepository<NewsCategory, Guid> repository, IObjectMapper objectMapper)
         {
             _categoryRepository = repository;
             _objectMapper = objectMapper;
         }
         [AbpAuthorize(PermissionNames.Pages_CreateCategory)]
-        public  async Task Create(NewsCategoryDto categoryDto)
+        public async Task Create(NewsCategoryDto categoryDto)
         {
-            var category= _objectMapper.Map<NewsCategory>(categoryDto);
+            var category = _objectMapper.Map<NewsCategory>(categoryDto);
             await this._categoryRepository.InsertAsync(category);
         }
         [AbpAuthorize(PermissionNames.Pages_UpdateCategory)]
         public async Task Update(CreateOrUpdateCategoryDto updateCategoryDto)
         {
             var category = await this._categoryRepository.FirstOrDefaultAsync(x => x.Id == updateCategoryDto.Id);
-            var single = _objectMapper.Map(updateCategoryDto,category);
+            var single = _objectMapper.Map(updateCategoryDto, category);
             await this.UpdateAsync(single);
         }
         /// <summary>
@@ -84,7 +84,7 @@ namespace ppl.NewsCategorys
         public async Task BatchDelete(string ListGuid)
         {
             string[] str = ListGuid.Split(',');
-            foreach(var s in str)
+            foreach (var s in str)
             {
                 var category = await this._categoryRepository.GetAsync(new Guid(s));
                 await this.DeleteAsync(category);
@@ -95,15 +95,15 @@ namespace ppl.NewsCategorys
             var single = await _categoryRepository.GetAsync(entity.Id);
             return new CreateOrUpdateCategoryDto()
             {
-                Id=single.Id,
-                CreationTime=single.CreationTime,
-                CategoryName=single.CategoryName
+                Id = single.Id,
+                CreationTime = single.CreationTime,
+                CategoryName = single.CategoryName
             };
         }
         [AbpAllowAnonymous]
-        public List<NewsCategory> GetAll()
+        public async Task<IReadOnlyList<NewsCategoryDto>> GetAll()
         {
-            return _categoryRepository.GetAll().ToList();
+            return ObjectMapper.Map<IReadOnlyList<NewsCategoryDto>>(await _categoryRepository.GetAllListAsync());
         }
     }
 }

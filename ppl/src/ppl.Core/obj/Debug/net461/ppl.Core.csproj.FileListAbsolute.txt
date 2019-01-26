@@ -371,3 +371,4 @@ C:\Users\Admin\Documents\-\ppl\src\ppl.Core\obj\Debug\net461\ppl.Core.AssemblyIn
 C:\Users\Admin\Documents\-\ppl\src\ppl.Core\obj\Debug\net461\ppl.Core.csproj.CopyComplete
 C:\Users\Admin\Documents\-\ppl\src\ppl.Core\obj\Debug\net461\ppl.Core.dll
 C:\Users\Admin\Documents\-\ppl\src\ppl.Core\obj\Debug\net461\ppl.Core.pdb
+C:\Users\Admin\Documents\-\ppl\src\ppl.Core\obj\Debug\net461\ppl.Core.csprojAssemblyReference.cache

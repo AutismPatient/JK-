@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using ppl.Authorization;
 using ppl.Controllers;
 using ppl.FeedBack;
+using ppl.FeedBack.Dto;
 using ppl.Web.Models.FeedBack;
 
 namespace ppl.Web.Mvc.Controllers
@@ -19,36 +20,20 @@ namespace ppl.Web.Mvc.Controllers
         {
             _service = service;
         }
-        public IActionResult Index(PageRequestBase input)
+        public async Task<IActionResult> Index(PageRequestInput input)
         {
-            input.SearchedName = input.SearchedName == null ? "" : input.SearchedName;
-            var ListModel = _service.GetAll();
-            var seachlist = ListModel.Result.Where(x => x.Name.Contains(input.SearchedName) && x.IsDeleted==false).OrderByDescending(x => x.CreationTime).ToList();
-            var Count = seachlist.Count();
-            var PageCount = Count / input.PageSize;
-            var dataTol = Count % input.PageSize != 0;
-            PageCount = dataTol == true || PageCount == 0 ? PageCount + 1 : PageCount;
-            if (Count != 0)
-            {
-                if (input.PageIndex > PageCount)
-                {
-                    input.PageIndex = PageCount;
-                }
-            }
-            var NextPage = PageCount - input.PageIndex > 0 ? true : false;
-            var HasPreviousPage = input.PageIndex != 1 ? true : false;
-            seachlist = seachlist.Skip((input.PageIndex - 1) * input.PageSize).Take(input.PageSize).ToList();
-            var model = new FeedBackViewModel()
-            {
-                FeedBacks = seachlist,
-                TotalCount = Count,
-                PageIndex = input.PageIndex,
-                HasNextPage = NextPage,
-                PageSize = input.PageSize,
-                HasPreviousPage = HasPreviousPage,
-                TotalPageCount = PageCount,
-            };
-            return View(model);
+            var ListModel =await _service.GetAll();
+            var seachlist = ListModel.Where(x => x.Name.Contains(input.SearchedName) && x.IsDeleted==false).OrderByDescending(x => x.CreationTime).ToList();
+            var dto = new PageReturnDto<FeedBackDto>(seachlist,input.PageIndex,input.PageSize);
+            return View(new FeedBackViewModel() {
+                FeedBacks = dto.EntityItems,
+                PageIndex = dto.PageIndex,
+                PageSize = dto.PageSize,
+                HasNextPage = dto.NextPage,
+                HasPreviousPage = dto.HasPreviousPage,
+                TotalCount = dto.Count,
+                TotalPageCount = dto.PageCount
+            });
         }
         public PartialViewResult GetEdit(int Id)
         {

@@ -46,37 +46,36 @@ namespace ppl.Web.Mvc.Controllers
             _userManager = userManager;
         }
 
-        public async Task<IActionResult> NewsIndex(PageRequestBase input)
+        public async Task<IActionResult> NewsIndex(PageRequestInput input)
         {
-            var model =_newsMangerAppService.GetAll().Where(x => x.Title.Contains(input.SearchedName)).OrderByDescending(x => x.PageView).ToList();
-            model = model.Skip(input.SkipCount).Take(input.PageSize).ToList();
-            NewsCategoryDto newsCategory=new NewsCategoryDto();
+            var model = _newsMangerAppService.GetAll().Where(x => x.Title.Contains(input.SearchedName)).OrderByDescending(x => x.PageView).ToList();
+            NewsCategoryDto newsCategory = new NewsCategoryDto();
+            var dto = new PageReturnDto<NewsDto>(model, input.PageIndex, input.PageSize);
+            var category = await _categoryAppService.GetAll();
             model.ForEach(async s =>
             {
-                newsCategory =this.ObjectMapper.Map(_categoryAppService.GetAll().FirstOrDefault(x => x.Id == s.Id),newsCategory);
-                s.Author =ObjectMapper.Map<UserDto>(await this._userManager.GetUserByIdAsync(s.UserId));
+                newsCategory = category.FirstOrDefault(x => x.Id == s.Id);
+                s.Author = ObjectMapper.Map<UserDto>(await this._userManager.GetUserByIdAsync(s.UserId));
             });
-            var categorylist =_categoryAppService.GetAll();
-            var tagslist = await _newsTagAppService.GetAll();
-            var list = new NewsListViewModel()
+            return View(new NewsListViewModel()
             {
-                NewsList = model,
-                newsCategoryDtos=this.ObjectMapper.Map<List<NewsCategoryDto>>(categorylist),
-                TotalCount=model.Count,
-                PageIndex=input.PageIndex,
-                TotalPageCount=input.PageCount,
-                HasNextPage=input.NextPage,
-                HasPreviousPage=input.HasPreviousPage,
-                PageSize=input.PageSize,
-                tags= this.ObjectMapper.Map<List<TagDto>>(tagslist),
-            };
-            return View(list);
+                NewsList = dto.EntityItems,
+                TotalCount = dto.Count,
+                HasNextPage = dto.NextPage,
+                PageSize = dto.PageSize,
+                HasPreviousPage = dto.HasPreviousPage,
+                newsCategoryDtos = await _categoryAppService.GetAll(),
+                PageIndex = dto.PageIndex,
+                tags = await _newsTagAppService.GetAll(),
+                TotalPageCount = dto.PageCount,
+                newsCategories = newsCategory
+            });
         }
         public async Task<ActionResult> EditModel(Guid Id)
         {
             var output = await _newsMangerAppService.GetNewsEdit(new Abp.Application.Services.Dto.EntityDto<Guid>(Id));
             var model = new EditNewsViewModel(output);
-            return View("_EditNewsModal",model);
+            return View("_EditNewsModal", model);
         }
         [HttpPost]
         public async Task<IActionResult> Uploading(string L)
@@ -85,10 +84,10 @@ namespace ppl.Web.Mvc.Controllers
             var image = Request.Form.Files;
             if (image != null)
             {
-                foreach(var file in image)
+                foreach (var file in image)
                 {
                     var filename = file.FileName;
-                    var path = string.Format("{0}/{1}",_hostingEnvironment.WebRootPath, "images/newsimages");
+                    var path = string.Format("{0}/{1}", _hostingEnvironment.WebRootPath, "images/newsimages");
                     var url = Path.Combine(path, filename);
                     foreach (var img in Directory.GetFiles(path))
                     {
@@ -103,7 +102,7 @@ namespace ppl.Web.Mvc.Controllers
                         await file.CopyToAsync(fs);
                         fs.Flush();
                         fs.Close();
-                        urlname = string.Format("{0}/{1}",path,filename);
+                        urlname = string.Format("{0}/{1}", path, filename);
                     }
                 }
             }

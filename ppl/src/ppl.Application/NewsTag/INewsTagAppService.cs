@@ -13,7 +13,7 @@ namespace ppl.NewsTag
         Task Create(TagDto input);
         Task Update(TagInput input);
         Task Delete(Guid entity);
-        Task<List<NewsTags>> GetAll();
+        Task<IReadOnlyList<TagDto>> GetAll();
         Task BatchDelete(string ListGuid);
         Task Recover(Guid id);
         Task BatchRecover(string GuidList);

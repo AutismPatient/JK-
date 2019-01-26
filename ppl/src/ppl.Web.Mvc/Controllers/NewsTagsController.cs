@@ -21,24 +21,20 @@ namespace ppl.Web.Mvc.Controllers
         {
             _tagAppService = tagAppService;
         }
-        public async Task<IActionResult> Index(PageRequestBase input)
+        public async Task<IActionResult> Index(PageRequestInput input)
         {
             var tag = await _tagAppService.GetAll();
-            input.Count = tag.Count;
-            var input1 = new PageRequestBase { };
             var seachlist = tag.Where(x => x.TagName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime).ToList();
-            seachlist = seachlist.Skip(input.SkipCount).Take(input.PageSize).ToList();
-            var model = new TagViewModel()
-            {
-                NewsTags = seachlist,
-                TotalCount = tag.Count,
-                PageIndex = input.PageIndex,
-                HasNextPage =input.NextPage,
-                PageSize = input.PageSize,
-                HasPreviousPage =input.HasPreviousPage,
-                TotalPageCount =input.PageCount,
-            };
-            return View(model);
+            var dto = new PageReturnDto<TagDto>(seachlist, input.PageIndex, input.PageSize);
+            return View(new TagViewModel(){
+                    NewsTags=dto.EntityItems,
+                    PageIndex=dto.PageIndex,
+                    PageSize=dto.PageSize,
+                    HasNextPage=dto.NextPage,
+                    HasPreviousPage=dto.HasPreviousPage,
+                    TotalCount=dto.Count,
+                    TotalPageCount=dto.PageCount
+                });
         }
         public async Task<ActionResult> GetTagsEdit(Guid Id)
         {

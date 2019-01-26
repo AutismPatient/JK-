@@ -198,7 +198,7 @@ namespace ppl.NewsManger
         }
         public async Task<GetNewsEdit> GetNewsEdit(Abp.Application.Services.Dto.EntityDto<Guid> entity)
         {
-            var Getcategory = _categoryAppService.GetAll();
+            var Getcategory =await _categoryAppService.GetAll();
             var GetTags = _tagRepository.GetAll();
             var news = await _newsRepository.GetAsync(entity.Id);
             var category = Getcategory.FirstOrDefault(x => x.Id == news.CategoryId);

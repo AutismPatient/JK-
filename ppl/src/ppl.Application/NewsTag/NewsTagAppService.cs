@@ -54,9 +54,9 @@ namespace ppl.NewsTag
             };
         }
         [AbpAllowAnonymous]
-        public async Task<List<NewsTags>> GetAll()
+        public async Task<IReadOnlyList<TagDto>> GetAll()
         {
-            return await this._tagRepository.GetAllListAsync(x=>!x.IsDeleted);
+            return ObjectMapper.Map<IReadOnlyList<TagDto>>(await this._tagRepository.GetAllListAsync(x=>!x.IsDeleted));
         }
         /// <summary>
         /// 批量删除

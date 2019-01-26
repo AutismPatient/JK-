@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ppl.FeedBack.Dto
 {
-    public class FeedBackListDto:PageRequestBase
+    public class FeedBackListDto
     {
     }
 }

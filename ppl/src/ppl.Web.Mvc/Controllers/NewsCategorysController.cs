@@ -23,22 +23,12 @@ namespace ppl.Web.Mvc.Controllers
         {
             _categoryAppService = categoryAppService;
         }
-        public async Task<IActionResult> Index(PageRequestBase input)
+        public async Task<IActionResult> Index(PageRequestInput input)
         {
-            var category = _categoryAppService.GetAll();
-            var seachlist =ObjectMapper.Map<List<NewsCategoryDto>>(category.Where(x => x.CategoryName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime).ToList());
-            seachlist = seachlist.Skip(input.SkipCount).Take(input.PageSize).ToList();
-            var model = new CategoryViewModel()
-            {
-                NewsCategories=seachlist,
-                TotalCount=seachlist.Count,
-                PageIndex=input.PageIndex,
-                HasNextPage=input.NextPage,
-                PageSize=input.PageSize,
-                HasPreviousPage=input.HasPreviousPage,
-                TotalPageCount=input.PageCount,
-            };
-            return View(model);
+            var category =await _categoryAppService.GetAll();
+            var seachlist =ObjectMapper.Map<IReadOnlyList<NewsCategoryDto>>(category.Where(x => x.CategoryName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime));
+            var dto = new PageReturnDto<NewsCategoryDto>(seachlist, input.PageIndex, input.PageSize);
+            return View();
         }
         
         public async Task<ActionResult> GetCategoryEdit(Guid Id)
