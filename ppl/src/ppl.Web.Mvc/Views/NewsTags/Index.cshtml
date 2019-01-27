@@ -1,6 +1,7 @@
 ﻿@using ppl.Web.Startup
+@using ppl.NewsTag.Dto
 @using static ppl.JklConsts
-@model ppl.Web.Models.NewsManger.Tag.TagViewModel
+@model ppl.Web.Models.Common.ViewModelBase<TagDto>
 @{
     ViewBag.CurrentPageName = "NewTag"; // The menu item will be active for this page.
 }
@@ -123,7 +124,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    标签列表 <small>共有 @Model.NewsTags.Where(x => x.IsDeleted != true).Count() 条可编辑数据</small>
+                    标签列表 <small>共有 @Model.Items.Where(x => x.IsDeleted != true).Count() 条可编辑数据</small>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -184,7 +185,7 @@
                     </thead>
                     <tbody>
                         @{var num = 0; }
-                        @foreach (var news in Model.NewsTags)
+                        @foreach (var news in Model.Items)
                         {
                             num++;
                             <tr>

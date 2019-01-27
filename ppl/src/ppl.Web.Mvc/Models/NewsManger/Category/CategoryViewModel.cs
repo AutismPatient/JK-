@@ -9,8 +9,8 @@ using System.Threading.Tasks;
 
 namespace ppl.Web.Models.NewsManger.Category
 {
-    public class CategoryViewModel: PageListViewModelBase
+    public class CategoryViewModel: PageListViewModelBase 
     {
-        public virtual List<NewsCategoryDto> NewsCategories { get; set; } 
+        //public virtual IReadOnlyList<T> NewsCategories { get; set; }
     }
 }

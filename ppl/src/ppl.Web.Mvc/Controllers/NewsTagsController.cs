@@ -9,6 +9,7 @@ using ppl.Authorization;
 using ppl.Controllers;
 using ppl.NewsTag;
 using ppl.NewsTag.Dto;
+using ppl.Web.Models.Common;
 using ppl.Web.Models.NewsManger.Tag;
 
 namespace ppl.Web.Mvc.Controllers
@@ -26,15 +27,7 @@ namespace ppl.Web.Mvc.Controllers
             var tag = await _tagAppService.GetAll();
             var seachlist = tag.Where(x => x.TagName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime).ToList();
             var dto = new PageReturnDto<TagDto>(seachlist, input.PageIndex, input.PageSize);
-            return View(new TagViewModel(){
-                    NewsTags=dto.EntityItems,
-                    PageIndex=dto.PageIndex,
-                    PageSize=dto.PageSize,
-                    HasNextPage=dto.NextPage,
-                    HasPreviousPage=dto.HasPreviousPage,
-                    TotalCount=dto.Count,
-                    TotalPageCount=dto.PageCount
-                });
+            return View(new ViewModelBase<TagDto>(dto));
         }
         public async Task<ActionResult> GetTagsEdit(Guid Id)
         {

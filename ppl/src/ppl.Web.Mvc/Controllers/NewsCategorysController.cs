@@ -11,6 +11,7 @@ using ppl.Authorization;
 using ppl.Controllers;
 using ppl.NewsCategorys;
 using ppl.NewsCategorys.Dto;
+using ppl.Web.Models.Common;
 using ppl.Web.Models.NewsManger.Category;
 
 namespace ppl.Web.Mvc.Controllers
@@ -28,7 +29,7 @@ namespace ppl.Web.Mvc.Controllers
             var category =await _categoryAppService.GetAll();
             var seachlist =ObjectMapper.Map<IReadOnlyList<NewsCategoryDto>>(category.Where(x => x.CategoryName.Contains(input.SearchedName)).OrderByDescending(x => x.CreationTime));
             var dto = new PageReturnDto<NewsCategoryDto>(seachlist, input.PageIndex, input.PageSize);
-            return View();
+            return View(new ViewModelBase<NewsCategoryDto>(dto));
         }
         
         public async Task<ActionResult> GetCategoryEdit(Guid Id)

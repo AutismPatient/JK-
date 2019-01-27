@@ -1,6 +1,7 @@
 ﻿@using ppl.Web.Startup
+@using ppl.FeedBack.Dto
 @using static ppl.JklConsts
-@model ppl.Web.Models.FeedBack.FeedBackViewModel
+@model ppl.Web.Models.Common.ViewModelBase<FeedBackDto>
 @{
     ViewBag.CurrentPageName = "FeedBack"; // The menu item will be active for this page.
 }
@@ -123,7 +124,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    来自用户的反馈 <small>共有 @Model.FeedBacks.Where(x => x.IsDeleted != true).Count() 条数据</small>
+                    来自用户的反馈 <small>共有 @Model.Items.Where(x => x.IsDeleted != true).Count() 条数据</small>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -163,7 +164,7 @@
                             <th id="select" style="max-width:40px;">
                                 <input id="IsCheckAll" type="checkbox" name="IsCheckAll" value="false" class="filled-in"><label for="IsCheckAll" class="">全选</label>
                             </th>
-                            <th>#</th>
+                            <th>列表编号</th>
                             <th>匿名用户名</th>
                             <th>邮箱</th>
                             <th>提交时间</th>
@@ -172,7 +173,7 @@
                     </thead>
                     <tbody>
                         @{var num = 0; }
-                        @foreach (var news in Model.FeedBacks)
+                        @foreach (var news in Model.Items)
                         {
                             num++;
                             <tr>

@@ -1,6 +1,7 @@
 ﻿@using ppl.Web.Startup
+@using ppl.NewsCategorys.Dto
 @using static ppl.JklConsts
-@model ppl.Web.Models.NewsManger.Category.CategoryViewModel
+@model ppl.Web.Models.Common.ViewModelBase<NewsCategoryDto>
 @{
     ViewBag.CurrentPageName = "NewsCategory"; // The menu item will be active for this page.
 }
@@ -120,7 +121,7 @@
         <div class="card">
             <div class="header">
                 <h2>
-                    @L("NewsCategory") <small>共有 @Model.NewsCategories.Where(x => x.IsDeleted != true).Count() 条可编辑数据</small>
+                    @L("NewsCategory") <small>共有 @Model.Items.Where(x => x.IsDeleted != true).Count() 条可编辑数据</small>
                 </h2>
                 <ul class="header-dropdown m-r--5">
                     <li class="dropdown">
@@ -180,7 +181,7 @@
                     </thead>
                     <tbody>
                         @{var num = 0; }
-                        @foreach (var news in Model.NewsCategories)
+                        @foreach (var news in Model.Items)
                         {
                             num++;
                             <tr>

@@ -6,6 +6,10 @@ using System.Threading.Tasks;
 
 namespace ppl
 {
+    /// <summary>
+    /// 分页返回结果基类
+    /// </summary>
+    /// <typeparam name="T"></typeparam>
     public class PageReturnDto<T> where T:class
     {
         public bool HasPreviousPage { get; set; }
@@ -16,7 +20,11 @@ namespace ppl
         public IReadOnlyList<T> EntityItems { get; set; }
         public int PageIndex { get; set; }
         public int PageSize { get; set; }
-        public PageReturnDto(IReadOnlyList<T> items,int pageindex=1,int pagesize=10)
+        public PageReturnDto(IReadOnlyList<T> items):base()
+        {
+
+        }
+        public PageReturnDto(IReadOnlyList<T> items,int pageindex=1,int pagesize=10):base()
         {
             Count = items.Count();
             PageCount = (int)Math.Ceiling(items.Count / (double)pagesize);
@@ -26,5 +34,6 @@ namespace ppl
             NextPage = PageCount > pageindex ? true : false;
             EntityItems = items.Skip(SkipCount).Take(pagesize).ToList();
         }
+        
     }
 }

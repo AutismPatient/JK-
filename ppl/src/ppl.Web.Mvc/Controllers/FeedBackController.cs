@@ -8,6 +8,7 @@ using ppl.Authorization;
 using ppl.Controllers;
 using ppl.FeedBack;
 using ppl.FeedBack.Dto;
+using ppl.Web.Models.Common;
 using ppl.Web.Models.FeedBack;
 
 namespace ppl.Web.Mvc.Controllers
@@ -25,15 +26,7 @@ namespace ppl.Web.Mvc.Controllers
             var ListModel =await _service.GetAll();
             var seachlist = ListModel.Where(x => x.Name.Contains(input.SearchedName) && x.IsDeleted==false).OrderByDescending(x => x.CreationTime).ToList();
             var dto = new PageReturnDto<FeedBackDto>(seachlist,input.PageIndex,input.PageSize);
-            return View(new FeedBackViewModel() {
-                FeedBacks = dto.EntityItems,
-                PageIndex = dto.PageIndex,
-                PageSize = dto.PageSize,
-                HasNextPage = dto.NextPage,
-                HasPreviousPage = dto.HasPreviousPage,
-                TotalCount = dto.Count,
-                TotalPageCount = dto.PageCount
-            });
+            return View(new ViewModelBase<FeedBackDto>(dto));
         }
         public PartialViewResult GetEdit(int Id)
         {
