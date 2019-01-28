@@ -931,3 +931,4 @@ C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\bin\Debug\net461\ppl.EntityFramew
 C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\bin\Debug\net461\ppl.EntityFrameworkCore.dll.config
 C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\obj\Debug\net461\ppl.Web.Mvc.Views.pdb
 C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\obj\Debug\net461\ppl.Web.Mvc.csproj.CopyComplete
+C:\Users\Admin\Documents\-\ppl\src\ppl.Web.Mvc\obj\Debug\net461\Razor\Views\Shared\Modals\_PageInfo.g.cshtml.cs

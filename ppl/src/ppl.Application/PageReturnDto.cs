@@ -24,15 +24,15 @@ namespace ppl
         {
 
         }
-        public PageReturnDto(IReadOnlyList<T> items,int pageindex=1,int pagesize=10):base()
+        public PageReturnDto(IReadOnlyList<T> items,int? pageindex=1,int? pagesize=10):base()
         {
             Count = items.Count();
             PageCount = (int)Math.Ceiling(items.Count / (double)pagesize);
-            PageIndex= pageindex = pageindex > PageCount ? PageCount : pageindex;
-            SkipCount = (pageindex - 1) * pagesize;
+            PageIndex = pageindex.Value > PageCount ? PageCount : pageindex.Value;
+            SkipCount = (pageindex.Value - 1) * pagesize.Value;
             HasPreviousPage = pageindex > 1 ? true : false;
             NextPage = PageCount > pageindex ? true : false;
-            EntityItems = items.Skip(SkipCount).Take(pagesize).ToList();
+            EntityItems = items.Skip(SkipCount).Take(pagesize.Value).ToList();
         }
         
     }

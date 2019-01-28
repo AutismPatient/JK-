@@ -52,24 +52,15 @@ namespace ppl.Web.Mvc.Controllers
             NewsCategoryDto newsCategory = new NewsCategoryDto();
             var dto = new PageReturnDto<NewsDto>(model, input.PageIndex, input.PageSize);
             var category = await _categoryAppService.GetAll();
+            var tags = await _newsTagAppService.GetAll();
+            
             model.ForEach(async s =>
             {
                 newsCategory = category.FirstOrDefault(x => x.Id == s.Id);
-                s.Author = ObjectMapper.Map<UserDto>(await this._userManager.GetUserByIdAsync(s.UserId));
+                var userdto = await this._userManager.GetUserByIdAsync(s.UserId);
+                s.Author = ObjectMapper.Map<UserDto>(userdto);
             });
-            return View(new NewsListViewModel()
-            {
-                NewsList = dto.EntityItems,
-                TotalCount = dto.Count,
-                HasNextPage = dto.NextPage,
-                PageSize = dto.PageSize,
-                HasPreviousPage = dto.HasPreviousPage,
-                newsCategoryDtos = await _categoryAppService.GetAll(),
-                PageIndex = dto.PageIndex,
-                tags = await _newsTagAppService.GetAll(),
-                TotalPageCount = dto.PageCount,
-                newsCategories = newsCategory
-            });
+            return View(new NewsListViewModel<NewsDto, NewsCategoryDto, TagDto>(dto,category,tags,newsCategory));
         }
         public async Task<ActionResult> EditModel(Guid Id)
         {

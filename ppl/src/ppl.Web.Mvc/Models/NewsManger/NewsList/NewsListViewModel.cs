@@ -10,12 +10,19 @@ using System.Threading.Tasks;
 
 namespace ppl.Web.Models.NewsManger.NewsList
 {
-    public class NewsListViewModel: PageListViewModelBase
+    public class NewsListViewModel<T,TCategory,Ttag>: ViewModelBase<T> where T:class where TCategory:class where Ttag:class 
     {
-        public IReadOnlyList<NewsDto> NewsList { get; set; }
-        public IReadOnlyList<TagDto> tags { get; set; }
-        public NewsCategoryDto newsCategories { get; set; }
+        public NewsListViewModel(PageReturnDto<T> pageReturnDto,IReadOnlyList<TCategory> categoryDto,IReadOnlyList<Ttag> tagDto,TCategory single):base(pageReturnDto)
+        {
+            NewsList = pageReturnDto.EntityItems;
+            tags = tagDto;
+            newsCategoryDtos = categoryDto;
+            newsCategories = single;
+        }
+        public IReadOnlyList<T> NewsList { get; set; }
+        public IReadOnlyList<Ttag> tags { get; set; }
+        public TCategory newsCategories { get; set; }
         
-        public IReadOnlyList<NewsCategoryDto> newsCategoryDtos { get; set; }
+        public IReadOnlyList<TCategory> newsCategoryDtos { get; set; }
     }
 }

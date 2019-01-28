@@ -1,6 +1,10 @@
 ﻿@using ppl.Web.Startup
+@using ppl.NewsCategorys.Dto
+@using ppl.NewsTag.Dto
+@using ppl.NewsManger.Dto
+@using ppl.Web.Models.Common.PageInfoModel
 @using static ppl.JklConsts
-@model ppl.Web.Models.NewsManger.NewsList.NewsListViewModel
+@model ppl.Web.Models.NewsManger.NewsList.NewsListViewModel<NewsDto,NewsCategoryDto,TagDto>
 @{
     ViewBag.CurrentPageName = "NewsList"; // The menu item will be active for this page.
 }
@@ -267,18 +271,7 @@
                     </tbody>
                 </table>
                 <div class="row" style="margin-top:30px;">
-                    <div class="col-md-3">
-                        <a href="javascript:void();" class="btn btn-default btn-sm">当前页码：<span id="PageIndex">@Model.PageIndex</span> / <span id="PageCount">@Model.TotalPageCount</span> </a>
-                        @{ var top = Model.PageIndex - 1; var next = Model.PageIndex + 1;}
-                        <a href="../../News/NewsIndex?PageIndex=@top" @(Model.PageIndex <= 1 ? "disabled" : "") class="btn btn-default btn-sm pad" id="Top"><i class="material-icons">keyboard_arrow_left</i></a>
-                        <a href="../../News/NewsIndex?PageIndex=@next" @(Model.PageIndex >= Model.TotalPageCount ? "disabled" : "") class="btn btn-default btn-sm pad" id="Next"><i class="material-icons">keyboard_arrow_right</i></a>
-                        <div class="input-group" style="width:160px;float:right">
-                            <input type="number" id="TotalPageCount" @(Model.TotalPageCount <= 1 ? "disabled" : "") class="form-control form-group-sm input-info" value="@Model.TotalPageCount" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);padding: 4px 10px;" max="@Model.TotalPageCount" min="1">
-                            <span class="input-group-btn">
-                                <a class="btn btn-sm btn-primary" href="../../News/NewsIndex?PageIndex=@Model.TotalPageCount" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">跳转</a>
-                            </span>
-                        </div>
-                    </div>
+                     @Html.Partial("~/Views/Shared/Modals/_PageInfo.cshtml",new PageViewModel("News","NewIndex",Model.PageIndex,Model.PageSize,Model.TotalPageCount,Model.HasPreviousPage,Model.HasNextPage,Model.TotalCount))
                     <div class="col-md-9 text-right">
                         <button type="button" class="btn btn-success btn-sm btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#NewsCreateModal">
                             <i class="material-icons">add</i>

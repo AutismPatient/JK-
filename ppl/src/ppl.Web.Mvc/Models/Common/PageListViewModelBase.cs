@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 namespace ppl.Web.Models.Common
 {
     /// <summary>
-    /// 分页所需视图模型
+    /// 分页所需视图模型基类
     /// </summary>
     public class PageListViewModelBase
     {
