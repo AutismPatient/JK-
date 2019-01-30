@@ -5605,6 +5605,7 @@ section.content {
 
 .modal .modal-footer {
     border: none;
+    padding:0;
 }
 
 .modal-col-red {

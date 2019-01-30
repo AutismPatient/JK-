@@ -53,7 +53,6 @@ namespace ppl.Web.Mvc.Controllers
             var dto = new PageReturnDto<NewsDto>(model, input.PageIndex, input.PageSize);
             var category = await _categoryAppService.GetAll();
             var tags = await _newsTagAppService.GetAll();
-            
             model.ForEach(async s =>
             {
                 newsCategory = category.FirstOrDefault(x => x.Id == s.Id);

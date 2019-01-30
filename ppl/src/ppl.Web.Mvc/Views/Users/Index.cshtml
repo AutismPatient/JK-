@@ -1,5 +1,6 @@
 ﻿@using Abp.Authorization.Users
 @using ppl.Web.Startup
+@using ppl.Web.Models.Common.Modals
 @model ppl.Web.Models.Users.UserListViewModel
 @{
     ViewBag.CurrentPageName = PageNames.Users; // The menu item will be active for this page.
@@ -74,11 +75,7 @@
 <div class="modal fade" id="UserCreateModal" tabindex="-1" role="dialog" aria-labelledby="UserCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    <span>@L("CreateNewUser")</span>
-                </h4>
-            </div>
+            @Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("新建系统用户"))
             <div class="modal-body">
                 <form name="userCreateForm" role="form" novalidate class="form-validation">
                     <ul class="nav nav-tabs tab-nav-right" role="tablist">

@@ -3,6 +3,7 @@
 @using ppl.NewsTag.Dto
 @using ppl.NewsManger.Dto
 @using ppl.Web.Models.Common.PageInfoModel
+@using ppl.Web.Models.Common.Modals
 @using static ppl.JklConsts
 @model ppl.Web.Models.NewsManger.NewsList.NewsListViewModel<NewsDto,NewsCategoryDto,TagDto>
 @{
@@ -286,11 +287,7 @@
 <div class="modal fade bs-example-modal-lg" id="NewsCreateModal" tabindex="-1" role="dialog" aria-labelledby="RoleCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog modal-lg" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    <span>@L("CreateNews")</span>
-                </h4>
-            </div>
+            @Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("建立新的资料项"))
             <div class="modal-body">
                 <form name="NewsCreateForm" role="form" novalidate class="form-validation" enctype="multipart/form-data">
                     <ul class="nav nav-tabs tab-nav-right" role="tablist">

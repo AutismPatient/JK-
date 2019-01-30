@@ -35,7 +35,7 @@ namespace ppl.Web.Startup
                         ))
                         .AddItem(
                     new MenuItemDefinition(
-                            "NewTag",
+                            "NewsTags",
                             L("LabelItem"),
                             url:"/NewsTags/Index",
                             requiredPermissionName:PermissionNames.Pages_Tags

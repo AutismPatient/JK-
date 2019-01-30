@@ -1,5 +1,7 @@
 ﻿@using ppl.Web.Startup
 @using ppl.NewsTag.Dto
+@using ppl.Web.Models.Common.PageInfoModel
+@using ppl.Web.Models.Common.Modals
 @using static ppl.JklConsts
 @model ppl.Web.Models.Common.ViewModelBase<TagDto>
 @{
@@ -217,21 +219,8 @@
                     </tbody>
                 </table>
                 <div class="row" style="margin-top:30px;">
-                    <div class="col-md-3">
-                        <a href="javascript:void();" class="btn btn-default btn-sm">当前页码：<span id="PageIndex">@Model.PageIndex</span> / <span id="PageCount">@Model.TotalPageCount</span> </a>
-                        @{ var top = Model.PageIndex - 1; var next = Model.PageIndex + 1;}
-                        <a href="../../NewsTags/Index?PageIndex=@top" @(Model.PageIndex <= 1 ? "disabled" : "") class="btn btn-default btn-sm pad" id="Top"><i class="material-icons">keyboard_arrow_left</i></a>
-                        <a href="../../NewsTags/Index?PageIndex=@next" @(Model.PageIndex >= Model.TotalPageCount ? "disabled" : "") class="btn btn-default btn-sm pad" id="Next"><i class="material-icons">keyboard_arrow_right</i></a>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="input-group">
-                            <input type="number" id="TotalPageCount" class="form-control form-group-sm input-info" value="@Model.TotalPageCount" style="box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);padding: 4px 10px;" max="@Model.TotalPageCount" min="1">
-                            <span class="input-group-btn">
-                                <a href="../../NewsTags/Index?PageIndex=@Model.TotalPageCount" class="btn btn-sm btn-primary" id="jump" type="button" style="border-top-left-radius: 0;border-bottom-left-radius: 0;">跳转</a>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="col-md-6 text-right">
+                    @Html.Partial("~/Views/Shared/Modals/_PageInfo.cshtml", new PageViewModel("News", "NewIndex", Model.PageIndex, Model.PageSize, Model.TotalPageCount, Model.HasPreviousPage, Model.HasNextPage, Model.TotalCount))
+                    <div class="col-md-9 text-right">
                         <button type="button" class="btn btn-success btn-sm btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#TagCreateModal">
                             <i class="material-icons">add</i>
                         </button>
@@ -244,11 +233,7 @@
 <div class="modal fade" id="TagCreateModal" tabindex="-1" role="dialog" aria-labelledby="RoleCreateModalLabel" data-backdrop="static">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
-            <div class="modal-header">
-                <h4 class="modal-title">
-                    <span>创建新闻标签</span>
-                </h4>
-            </div>
+            @Html.Partial("~/Views/Shared/Modals/_ModalHeader.cshtml", new ModalHeaderViewModel("新建资料标签项"))
             <div class="modal-body">
                 <form name="TagCreateForm" role="form" novalidate class="form-validation">
                     <div id="create-news-details" class="tab-pane animated fadeIn active">
