@@ -6,6 +6,7 @@ using ppl.Authorization;
 using ppl.Controllers;
 using ppl.Roles;
 using ppl.Web.Models.Roles;
+using ppl.Roles.Dto;
 
 namespace ppl.Web.Controllers
 {
@@ -19,17 +20,12 @@ namespace ppl.Web.Controllers
             _roleAppService = roleAppService;
         }
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(PageRequestInput input)
         {
             var roles = (await _roleAppService.GetAll(new PagedAndSortedResultRequestDto())).Items;
             var permissions = (await _roleAppService.GetAllPermissions()).Items;
-            var model = new RoleListViewModel
-            {
-                Roles = roles,
-                Permissions = permissions
-            };
-
-            return View(model);
+            var dto = new PageReturnDto<RoleDto>(roles, input.PageIndex, input.PageSize);
+            return View(new RoleListViewModel<RoleDto,PermissionDto>(dto,permissions));
         }
 
         public async Task<ActionResult> EditRoleModal(int roleId)

@@ -1,6 +1,9 @@
 ﻿@using ppl.Web.Startup
 @using ppl.Web.Models.Common.Modals
-@model ppl.Web.Models.Roles.RoleListViewModel
+@using ppl.Roles.Dto
+@using ppl.Authorization.Accounts.Dto
+@using ppl.Web.Models.Common.PageInfoModel
+@model ppl.Web.Models.Roles.RoleListViewModel<RoleDto,PermissionDto>
 @{
     ViewBag.CurrentPageName = PageNames.Roles; // The menu item will be active for this page.
 }
@@ -60,9 +63,14 @@
                     }
                     </tbody>
                 </table>
-                <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#RoleCreateModal">
-                    <i class="material-icons">add</i>
-                </button>
+                <div class="row">
+                    @Html.Partial("~/Views/Shared/Modals/_PageInfo.cshtml", new PageViewModel("Roles", "Index", Model.PageIndex, Model.PageSize, Model.TotalPageCount, Model.HasPreviousPage, Model.HasNextPage, Model.TotalCount))
+                    <div class="col-md-9 text-right">
+                        <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#RoleCreateModal">
+                            <i class="material-icons">add</i>
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
