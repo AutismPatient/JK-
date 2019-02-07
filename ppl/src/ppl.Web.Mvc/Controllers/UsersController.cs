@@ -6,6 +6,8 @@ using ppl.Authorization;
 using ppl.Controllers;
 using ppl.Users;
 using ppl.Web.Models.Users;
+using ppl.Users.Dto;
+using ppl.Roles.Dto;
 
 namespace ppl.Web.Controllers
 {
@@ -19,17 +21,12 @@ namespace ppl.Web.Controllers
             _userAppService = userAppService;
         }
 
-        public async Task<ActionResult> Index()
+        public async Task<ActionResult> Index(PageRequestInput input)
         {
-            var users =  _userAppService.GetAlls(); // Paging not implemented yet
+            var users =  _userAppService.GetAlls();
             var roles = (await _userAppService.GetRoles()).Items;
-            var model = new UserListViewModel
-            {
-                Users = users,
-                Roles = roles
-            };
-            
-            return View(model);
+            var dto = new PageReturnDto<UserDto>(users, input.PageIndex, input.PageSize);
+            return View(new UserListViewModel<UserDto,RoleDto>(dto,roles));
         }
 
         public async Task<ActionResult> EditUserModal(long userId)

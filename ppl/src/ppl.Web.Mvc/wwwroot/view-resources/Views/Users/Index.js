@@ -63,7 +63,9 @@
                 location.reload(true); //reload page to see new user!
             }).always(function () {
                 abp.ui.clearBusy(_$modal);
-            });
+                }).error(function () {
+                    abp.ui.clearBusy(_$modal);
+                });
         });
         
         _$modal.on('shown.bs.modal', function () {
@@ -71,7 +73,7 @@
         });
 
         function refreshUserList() {
-            location.reload(true); //reload page to see new user!
+            location.reload(true); 
         }
 
         function deleteUser(userId, userName) {

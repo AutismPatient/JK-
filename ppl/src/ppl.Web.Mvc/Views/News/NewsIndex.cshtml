@@ -277,7 +277,7 @@
                 <form name="NewsCreateForm" role="form" novalidate class="form-validation" enctype="multipart/form-data">
                     <ul class="nav nav-tabs tab-nav-right" role="tablist">
                         <li role="presentation" class="active"><a href="#create-news-details" data-toggle="tab">新闻概要</a></li>
-                        <li role="presentation"><a href="#create-news-tags" data-toggle="tab">标签</a></li>
+                        <li role="presentation"><a href="#create-news-tags" data-toggle="tab">标签选择项</a></li>
                     </ul>
                     <div class="tab-content">
                         <div id="create-news-details" class="tab-pane animated fadeIn active">
@@ -339,7 +339,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <a href="#" class="btn btn-default file">上传封面图片<input type="file" name="CoverUrl" value="为封面添加图片" accept="" onchange="preover(this)" class="validate form-control" /></a>
+                                            <a href="javascript:void()" class="btn btn-default file">上传封面图片<input type="file" name="CoverUrl" value="为封面添加图片" accept="" onchange="preover(this)" class="validate form-control" /></a>
                                         </div>
                                     </div>
                                 </div>
@@ -361,7 +361,7 @@
                                 <div class="col-sm-12">
                                     <div class="form-group form-float">
                                         <input id="Recommend" type="checkbox" name="Recommend" class="filled-in">
-                                        <label for="Recommend" class="">是否推荐</label>
+                                        <label for="Recommend" class="">是否为主页推荐内容</label>
                                     </div>
                                 </div>
                             </div>
@@ -446,8 +446,7 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js"></script>
-<script type="text/javascript">
+<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js">
     //富文本编辑器
     var E = window.wangEditor;
     var editor = new E('#editor');

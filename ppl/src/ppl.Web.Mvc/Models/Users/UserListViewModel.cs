@@ -1,13 +1,19 @@
 using System.Collections.Generic;
 using ppl.Roles.Dto;
 using ppl.Users.Dto;
+using ppl.Web.Models.Common;
 
 namespace ppl.Web.Models.Users
 {
-    public class UserListViewModel
+    public class UserListViewModel<TUsers,TRoles>:ViewModelBase<TUsers> where TUsers:class where TRoles:class
     {
-        public IReadOnlyList<UserDto> Users { get; set; }
+        public UserListViewModel(PageReturnDto<TUsers> dto,IReadOnlyList<TRoles> roles):base(dto)
+        {
+            Users=dto.EntityItems;
+            Roles = roles;
+        }
+        public IReadOnlyList<TUsers> Users { get; set; }
 
-        public IReadOnlyList<RoleDto> Roles { get; set; }
+        public IReadOnlyList<TRoles> Roles { get; set; }
     }
 }

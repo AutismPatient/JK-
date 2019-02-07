@@ -14,5 +14,7 @@ namespace ppl
         public const string DefaultAppName = "截客资料库";
 
         public const string DefaultMarginX = "margin-top:20px";
+
+        public const string FolderPath = "images/newsimages";
     }
 }

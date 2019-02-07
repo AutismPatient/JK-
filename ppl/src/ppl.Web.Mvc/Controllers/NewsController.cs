@@ -56,7 +56,7 @@ namespace ppl.Web.Mvc.Controllers
             model.ForEach(async s =>
             {
                 newsCategory = category.FirstOrDefault(x => x.Id == s.Id);
-                var userdto = await this._userManager.GetUserByIdAsync(s.UserId);
+                var userdto = await _userManager.GetUserByIdAsync(s.UserId);
                 s.Author = ObjectMapper.Map<UserDto>(userdto);
             });
             return View(new NewsListViewModel<NewsDto, NewsCategoryDto, TagDto>(dto,category,tags,newsCategory));
@@ -77,7 +77,7 @@ namespace ppl.Web.Mvc.Controllers
                 foreach (var file in image)
                 {
                     var filename = file.FileName;
-                    var path = string.Format("{0}/{1}", _hostingEnvironment.WebRootPath, "images/newsimages");
+                    var path = string.Format("{0}/{1}", _hostingEnvironment.WebRootPath,AppConsts.FolderPath);
                     var url = Path.Combine(path, filename);
                     foreach (var img in Directory.GetFiles(path))
                     {
