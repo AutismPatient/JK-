@@ -1,5 +1,5 @@
-﻿(function() {
-    $(function() {
+﻿(function () {
+    $(function () {
 
         var _userService = abp.services.app.user;
         var _$modal = $('#UserCreateModal');
@@ -63,17 +63,15 @@
                 location.reload(true); //reload page to see new user!
             }).always(function () {
                 abp.ui.clearBusy(_$modal);
-                }).error(function () {
-                    abp.ui.clearBusy(_$modal);
-                });
+            });
         });
-        
+
         _$modal.on('shown.bs.modal', function () {
             _$modal.find('input:not([type=hidden]):first').focus();
         });
 
         function refreshUserList() {
-            location.reload(true); 
+            location.reload(true);
         }
 
         function deleteUser(userId, userName) {

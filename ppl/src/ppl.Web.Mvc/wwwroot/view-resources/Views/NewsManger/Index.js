@@ -8,7 +8,7 @@
         });
         $("input[name=seacrh]").keypress(function (e) {
             if (e.keyCode === 13) {
-                window.location.href = "../../News/NewsIndex?SearchedName=" + $(this).val();
+                window.location.href = abp.appPath +"News/NewsIndex?SearchedName=" + $(this).val();
             }
         });
         var pageindex = $("#PageIndex").text();
@@ -18,7 +18,7 @@
                 $(this).val(1);
                 return;
             }
-            $("#jump").prop("href", "../../NewsManger/NewsIndex?PageIndex=" + $(this).val());
+            $("#jump").prop("href", abp.appPath+"NewsManger/NewsIndex?PageIndex=" + $(this).val());
         });
         //标签选择
         $("#NewsCreateModal .select-tag").on('click', '.tags', function () {
@@ -243,7 +243,6 @@
         $("#auditsubmit").click(function () {
             if (auditid !== null || auditid !== undefined) {
                 var select = $("#audit").val();
-                console.log(select);
                 abp.ui.setBusy(modal1);
                 _newsService.audital(auditid,select).done(function () {
                     abp.notify.info("审核成功！");
@@ -254,10 +253,5 @@
                 });
             }
         });
-
-        //审核
-        function audit(id) {
-
-        }
     });
 })();
