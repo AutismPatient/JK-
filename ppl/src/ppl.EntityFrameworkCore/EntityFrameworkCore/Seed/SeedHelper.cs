@@ -10,14 +10,17 @@ using ppl.EntityFrameworkCore.Seed.Tenants;
 using ppl.EntityFrameworkCore.Seed.WebSetting;
 
 namespace ppl.EntityFrameworkCore.Seed
-{
+{ 
     public static class SeedHelper
     {
         public static void SeedHostDb(IIocResolver iocResolver)
         {
             WithDbContext<pplDbContext>(iocResolver, SeedHostDb);
         }
-
+        /// <summary>
+        /// 初始化数据
+        /// </summary>
+        /// <param name="context"></param>
         public static void SeedHostDb(pplDbContext context)
         {
             context.SuppressAutoSetTenantId = true;
@@ -32,7 +35,12 @@ namespace ppl.EntityFrameworkCore.Seed
 
             new DefaultWebSettingsBuilder(context).Create();
         }
-
+        /// <summary>
+        /// 上下文注册类
+        /// </summary>
+        /// <typeparam name="TDbContext"></typeparam>
+        /// <param name="iocResolver"></param>
+        /// <param name="contextAction"></param>
         private static void WithDbContext<TDbContext>(IIocResolver iocResolver, Action<TDbContext> contextAction)
             where TDbContext : DbContext
         {

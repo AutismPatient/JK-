@@ -1,0 +1,277 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj": {}
+  },
+  "projects": {
+    "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj",
+        "projectName": "ppl.Application",
+        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj",
+        "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
+        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Application\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "imports": [
+            "portable-net45+win8+wp8+wpa81"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
+        "projectName": "ppl.Core",
+        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
+        "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
+        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Abp.AutoMapper": {
+              "target": "Package",
+              "version": "[3.8.1, )"
+            },
+            "Abp.ZeroCore.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[3.8.1, )"
+            },
+            "Castle.Windsor.MsDependencyInjection": {
+              "target": "Package",
+              "version": "[3.3.1, )"
+            },
+            "Microsoft.Extensions.Configuration.EnvironmentVariables": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Extensions.Configuration.Json": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.Extensions.Configuration.UserSecrets": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj",
+        "projectName": "ppl.EntityFrameworkCore",
+        "projectPath": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj",
+        "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
+        "outputPath": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj",
+        "projectName": "ppl.Web.Core",
+        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj",
+        "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
+        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\UUD\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net461"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net461": {
+            "projectReferences": {
+              "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj": {
+                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj"
+              },
+              "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj": {
+                "projectPath": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net461": {
+          "dependencies": {
+            "Abp.AspNetCore": {
+              "target": "Package",
+              "version": "[3.8.1, )"
+            },
+            "Abp.AspNetCore.SignalR": {
+              "target": "Package",
+              "version": "[3.8.1, )"
+            },
+            "Abp.ZeroCore": {
+              "target": "Package",
+              "version": "[3.8.1, )"
+            },
+            "Microsoft.AspNetCore": {
+              "target": "Package",
+              "version": "[2.1.2, )"
+            },
+            "Microsoft.AspNetCore.Authentication.JwtBearer": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[2.5.0, )"
+            },
+            "System.ValueTuple": {
+              "target": "Package",
+              "version": "[4.5.0, )"
+            }
+          },
+          "imports": [
+            "portable-net45+win8+wp8+wpa81"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}
