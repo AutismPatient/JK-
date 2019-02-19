@@ -102,12 +102,12 @@ using static ppl.JklConsts;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(434, 155, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "94c914eab1214f6b804ffd689b27a8ff", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d68c85473c4c4a8f87dbf200f38bc443", async() => {
                     BeginContext(467, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(477, 92, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e838141e433e47e39bdd93556d5b31a2", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "dca2bb2ca5da45fe8090b104b8fb6ac8", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -825,7 +825,7 @@ WriteAttributeValue("", 7194, news.Recommend==Recommend.No ? "red":"green", 7194
             WriteLiteral("\r\n            <div class=\"modal-body\">\r\n                ");
             EndContext();
             BeginContext(12175, 8354, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "acccc80057494ac4be7a734058094759", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "79b2d2bae3ae40498892f3483565ae20", async() => {
                 BeginContext(12280, 831, true);
                 WriteLiteral(@"
                     <ul class=""nav nav-tabs tab-nav-right"" role=""tablist"">
@@ -909,7 +909,7 @@ WriteAttributeValue("", 13821, MaxAbstractLength, 13821, 18, false);
                 WriteLiteral("                                                    ");
                 EndContext();
                 BeginContext(14740, 79, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "665029bfdcc44187a3c13c58ae03a8aa", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "129a561d8e514488b01e744c07cfb003", async() => {
                     BeginContext(14768, 41, false);
 #line 311 "D:\myppl\ppl\src\ppl.Web.Mvc\Views\News\NewsIndex.cshtml"
                                                                           Write(typename.Equals("Quality") ? "高质量" : "普通");
@@ -975,7 +975,7 @@ WriteAttributeValue("", 13821, MaxAbstractLength, 13821, 18, false);
                 WriteLiteral("                                                        ");
                 EndContext();
                 BeginContext(15713, 60, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "72a9497c3a33428391ae9e4312e6d220", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4fe5de76ee6b4714ad9d9fad04973064", async() => {
                     BeginContext(15743, 21, false);
 #line 326 "D:\myppl\ppl\src\ppl.Web.Mvc\Views\News\NewsIndex.cshtml"
                                                                                 Write(category.CategoryName);
@@ -1024,7 +1024,7 @@ WriteAttributeValue("", 13821, MaxAbstractLength, 13821, 18, false);
                 WriteLiteral("                                                    ");
                 EndContext();
                 BeginContext(16038, 25, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "45f73484a5e44be3abcbf2cf71fe97ef", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0bbabecb2a3244628b064eba797a6c39", async() => {
                     BeginContext(16046, 8, true);
                     WriteLiteral("暂时没有新闻类别");
                     EndContext();
@@ -1235,7 +1235,7 @@ WriteAttributeValue("", 13821, MaxAbstractLength, 13821, 18, false);
                 ");
             EndContext();
             BeginContext(21039, 982, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "d3503f911ac54dc1a870e1082431db81", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "fb467a8299874e58a55569ed506e74ac", async() => {
                 BeginContext(21139, 193, true);
                 WriteLiteral("\r\n                    <div class=\"form-group form-float\">\r\n                        <div class=\"form-line\">\r\n                            <select class=\"form-control\" id=\"audit\" name=\"auditId\">\r\n");
                 EndContext();
@@ -1249,7 +1249,7 @@ WriteAttributeValue("", 13821, MaxAbstractLength, 13821, 18, false);
                 WriteLiteral("                                    ");
                 EndContext();
                 BeginContext(21493, 44, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "1806ba5ce1bc4fb79af60cb05d393c7c", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4a2cfa54a20743bc872cb43f3e1ee563", async() => {
                     BeginContext(21520, 8, false);
 #line 427 "D:\myppl\ppl\src\ppl.Web.Mvc\Views\News\NewsIndex.cshtml"
                                                          Write(typename);

@@ -85,12 +85,12 @@ using ppl.Web.Models.Common.Modals;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(269, 154, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "4ce15ac0e61b4d7395918e2b66872514", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e6d048fffc0a49cba822365b68d511a1", async() => {
                     BeginContext(302, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(312, 91, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "01b6f4ddd82245dd8874da729b88660e", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "0312001068a64b3da2645da1ad3a78c7", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -308,7 +308,7 @@ WriteAttributeValue("", 2205, !languages.IsDisabled ? "green":"red", 2205, 40, f
             WriteLiteral("\r\n            <div class=\"modal-body\">\r\n                ");
             EndContext();
             BeginContext(4068, 2825, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "47c260ebfd554c77a6e52447ba37c269", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "bba6fee683c247b39dfaba027c0d84e6", async() => {
                 BeginContext(4148, 390, true);
                 WriteLiteral(@"
                     <div role=""tabpanel"" class=""tab-pane animated fadeIn "">
@@ -353,7 +353,7 @@ WriteAttributeValue("", 2205, !languages.IsDisabled ? "green":"red", 2205, 40, f
                 WriteLiteral("                                            ");
                 EndContext();
                 BeginContext(5636, 105, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "29125c627647464b8aafd3fb90ae95bc", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("option", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "c9801d210f364a8bb49495a6ecef6f15", async() => {
                     BeginContext(5688, 2, true);
                     WriteLiteral("<i");
                     EndContext();
