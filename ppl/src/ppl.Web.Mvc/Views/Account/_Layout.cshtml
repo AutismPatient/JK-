@@ -13,7 +13,6 @@
     Layout = null;
     AbpAntiForgeryManager.SetCookie(Context);
     var Model =await service.GetSingleEdit(service.GuidAsync());
-    var str = Model.Id.ToString();
 }
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +25,7 @@
 
     <link rel="shortcut icon" href="~/@Model.IconUrl">
 
-    <title>@Model.HomeUrlTitle -- Login</title>
+    <title> @Model.HomeUrlTitle </title>
 
     <environment names="Development">
         <link href="~/fonts/roboto/roboto.css" rel="stylesheet" asp-append-version="true" />
@@ -71,10 +70,10 @@
         }
 
         @RenderBody()
-
+        
         <div class="row">
             <div class="col-xs-12 text-center">
-                <small>&copy; @DateTime.Now.Year 截客 --  <a href="#"> abp </a>版本： @AppVersionHelper.Version </small>
+                <small>&copy; @DateTime.Now.Year 截客 --  <a href="#"> ABP </a>版本： @AppVersionHelper.Version </small>
             </div>
         </div>
 

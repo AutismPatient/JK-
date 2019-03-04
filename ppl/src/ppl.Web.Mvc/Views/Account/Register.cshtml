@@ -71,11 +71,19 @@
                     <label class="form-label">@L("Password")</label>
                 </div>
             </div>
-            
+
             <div class="row">
-                <div class="col-xs-12">
-                    <a asp-action="Login" class="btn btn-default waves-effect" >@L("Back")</a>
-                    <button id="RegisterButton" class="btn bg-pink waves-effect" type="submit">@L("Register")</button>
+                <div class="col-xs-4">
+                    <a asp-action="Login" class="btn btn-default waves-effect btn-block">@L("Back")</a>
+                </div>
+                <div class="col-xs-8">
+                    <button id="RegisterButton" class="btn bg-pink waves-effect btn-block" type="submit">@L("Register")</button>
+                </div>
+            </div>
+            <hr />
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <vc:account-languages></vc:account-languages>
                 </div>
             </div>
         </form>

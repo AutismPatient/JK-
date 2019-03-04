@@ -46,9 +46,15 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12" style="margin-bottom:4px;">
+                <div class="col-xs-7" style="margin-bottom:4px;">
                     <input type="checkbox" name="RememberMe" id="rememberme" checked class="form-control chk-col-red" value="true">
                     <label for="rememberme" class="form-label">@L("RememberMe")</label>
+                </div>
+                <div class="col-xs-5 text-right">
+                    @if (!Model.IsSelfRegistrationAllowed)
+                    {
+                        <a asp-action="Register">@L("Register")</a>
+                    }
                 </div>
             </div>
             <div class="row">
@@ -65,6 +71,11 @@
                 </div>
             }
             <hr />
+            <div class="row">
+                <div class="col-xs-12 text-center">
+                    <vc:account-languages></vc:account-languages>
+                </div>
+            </div>
         </form>
     </div>
 </div>
