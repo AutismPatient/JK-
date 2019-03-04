@@ -13,7 +13,7 @@ namespace ppl.Web.Host.Startup
         public static IWebHost BuildWebHost(string[] args)
         {
             return WebHost.CreateDefaultBuilder(args)
-                .UseStartup<Startup>()
+                .UseStartup<Startup>().UseUrls("http://localhost:5000")
                 .Build();
         }
     }

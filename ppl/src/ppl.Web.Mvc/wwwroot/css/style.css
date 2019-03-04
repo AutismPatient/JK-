@@ -10245,7 +10245,10 @@ fieldset[disabled] .form-control {
                 width: 100%;
                 padding: 10px 13px;
             }
-
+                .sidebar .menu .list a:hover, .sidebar .menu .list a:active:hover{
+                    background-color: rgba(0,0,0,.12);
+                    transition:all .6s;
+                }
                 .sidebar .menu .list a:hover, .sidebar .menu .list a:active, .sidebar .menu .list a:focus {
                     text-decoration: none !important;
                 }
@@ -10385,27 +10388,26 @@ fieldset[disabled] .form-control {
     color: #2196F3;
 }
 
-/* Login Page ================================== */
+/* Login Page ============== */
 .login-page {
-    background-color: #383d41;
     padding-left: 0;
     max-width: 360px;
     margin: 5% auto;
     overflow-x: hidden;
+    color:#333;
 }
+    .login-page a {
+        color: #00796B;
+    }
 
 .login-box .card {
-    border: 2px solid #1c3639;
-    border-radius: 0px;
-    background-color: #495057;
-    margin-top: 16px;
-    color: #858585;
-    margin-bottom: 30px;
+    margin-top: 12px;
     word-break: break-all;
-    border-top: 5px solid #777777;
     padding-top: 0;
 }
-
+.login-box .card .input-group{
+    margin-bottom:12px;
+}
 .login-page .login-box .logo a, #LoginForm h4 {
     letter-spacing: 3px;
 }
@@ -10419,7 +10421,7 @@ fieldset[disabled] .form-control {
 }
 
 .login-box .card .body, .login-box .input-group .input-group-addon .material-icons {
-    color: #9e9e9e;
+    
 }
 
 .login-page .login-box .msg {
@@ -10431,7 +10433,7 @@ fieldset[disabled] .form-control {
 .login-page .login-box a {
     font-size: 14px;
     text-decoration: none;
-    color: #00BCD4;
+    
 }
 
 .login-page .login-box .logo {
@@ -10443,14 +10445,13 @@ fieldset[disabled] .form-control {
         display: block;
         width: 100%;
         text-align: center;
-        color: #fff;
+        color: #444;
     }
 
     .login-page .login-box .logo small {
         display: block;
         width: 100%;
         text-align: center;
-        color: #fff;
         margin-top: -5px;
     }
 

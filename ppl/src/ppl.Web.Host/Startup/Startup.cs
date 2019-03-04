@@ -90,7 +90,7 @@ namespace ppl.Web.Host.Startup
 
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // Initializes ABP framework.
+            app.UseAbp(options => { options.UseAbpRequestLocalization = false; }); // 注册 ABP 框架.
 
             app.UseCors(_defaultCorsPolicyName); // Enable CORS!
 

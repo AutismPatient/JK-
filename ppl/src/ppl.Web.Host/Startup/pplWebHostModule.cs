@@ -6,8 +6,7 @@ using ppl.Configuration;
 
 namespace ppl.Web.Host.Startup
 {
-    [DependsOn(
-       typeof(pplWebCoreModule))]
+    [DependsOn(typeof(pplWebCoreModule))]
     public class pplWebHostModule: AbpModule
     {
         private readonly IHostingEnvironment _env;

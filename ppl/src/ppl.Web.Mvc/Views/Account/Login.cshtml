@@ -46,12 +46,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-6 p-t-5">
-                    <input type="checkbox" name="RememberMe" id="rememberme" class="filled-in chk-col-blue-grey" value="true">
-                    <label for="rememberme" style="font-size:14px">@L("RememberMe")</label>
+                <div class="col-xs-12" style="margin-bottom:4px;">
+                    <input type="checkbox" name="RememberMe" id="rememberme" checked class="form-control chk-col-red" value="true">
+                    <label for="rememberme" class="form-label">@L("RememberMe")</label>
                 </div>
-                <div class="col-xs-6">
-                    <button id="LoginButton" class="btn btn-block bg-blue waves-effect" type="submit">@L("LogIn")</button>
+            </div>
+            <div class="row">
+                <div class="col-xs-12">
+                    <button id="LoginButton" class="btn btn-block bg-blue waves-effect btn-lg" type="submit">@L("LogIn")</button>
                 </div>
             </div>
             @if (Model.IsSelfRegistrationAllowed)
@@ -62,6 +64,7 @@
                     </div>
                 </div>
             }
+            <hr />
         </form>
     </div>
 </div>
