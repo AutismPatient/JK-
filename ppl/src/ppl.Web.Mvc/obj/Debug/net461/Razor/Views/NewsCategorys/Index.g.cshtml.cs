@@ -94,12 +94,12 @@ using static ppl.JklConsts;
                 WriteLiteral("\r\n    ");
                 EndContext();
                 BeginContext(385, 153, false);
-                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "26a29089c7e64ef6ae2405127ed57d9b", async() => {
+                __tagHelperExecutionContext = __tagHelperScopeManager.Begin("environment", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "74af47c681b948af9c8bdbe0eba4e378", async() => {
                     BeginContext(418, 10, true);
                     WriteLiteral("\r\n        ");
                     EndContext();
                     BeginContext(428, 90, false);
-                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "20e36993b22641eea831888315c85265", async() => {
+                    __tagHelperExecutionContext = __tagHelperScopeManager.Begin("script", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "7bf2c240540f45908e554e818ee78d49", async() => {
                     }
                     );
                     __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();
@@ -605,7 +605,7 @@ WriteAttributeValue("", 6848, news.IsDeleted ? "red":"green", 6848, 33, false);
             WriteLiteral("\r\n            <div class=\"modal-body\">\r\n                ");
             EndContext();
             BeginContext(9794, 1328, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e36aa3aab0684735b8d3bc5a39be9402", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e3069413522d4b9fa1d6798d94dc0f39", async() => {
                 BeginContext(9869, 434, true);
                 WriteLiteral(@"
                     <div id=""create-news-details"" class=""tab-pane animated fadeIn active"">

@@ -1289,7 +1289,7 @@
 }
 
 .m-b-0 {
-    margin-bottom: 0px;
+    margin-bottom: 0px!important;
 }
 
 .m-l-5 {
@@ -10846,7 +10846,9 @@ html.ie11 .bs-searchbox .form-control {
 
 .info-fox {
     color: #333;
-    margin: 20px 0;
+    margin: 20px 15px;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .number-info {
@@ -10938,10 +10940,6 @@ html.ie11 .bs-searchbox .form-control {
 
 .number-title p, .progress-status p, .icon-info i {
     color: #5f5f5f;
-}
-
-.data_info .card {
-    box-shadow: none;
 }
 
     .data_info .card .header {

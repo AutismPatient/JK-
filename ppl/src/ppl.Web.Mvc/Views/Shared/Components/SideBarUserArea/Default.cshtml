@@ -6,10 +6,13 @@
     </div>
     <div class="info-container">
         <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><b>@Html.Raw(Model.GetShownLoginName())</b> </div>
-        <div class="email">@Model.LoginInformations.User.EmailAddress</div>
+        <div class="email">邮箱： @Model.LoginInformations.User.EmailAddress</div>
         <div class="btn-group user-helper-dropdown">
             <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
             <ul class="dropdown-menu pull-right">
+                <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">person</i>个人资料</a></li>
+                <li><a href="javascript:void(0);" class=" waves-effect waves-block"><i class="material-icons">lock_open</i>修改密码</a></li>
+                <li role="separator" class="divider"></li>
                 <li><a href="@Url.Action("Logout", "Account", new { area= string.Empty })"><i class="material-icons">input</i>注 销</a></li>
             </ul>
         </div>

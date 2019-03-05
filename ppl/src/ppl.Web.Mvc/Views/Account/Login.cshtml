@@ -28,7 +28,7 @@
         <form id="LoginForm" asp-action="Login" method="post">
             <input type="hidden" name="returnUrl" value="@Model.ReturnUrl" />
             <input type="hidden" name="returnUrlHash" />
-            <h4 class="text-center" style="margin-bottom: 20px;">管理员登录</h4>
+            <h4 class="text-center m-b-20">管理员登录</h4>
             <div class="input-group">
                 <span class="input-group-addon">
                     <i class="material-icons">person</i>
@@ -47,7 +47,7 @@
             </div>
             <div class="row">
                 <div class="col-xs-7" style="margin-bottom:4px;">
-                    <input type="checkbox" name="RememberMe" id="rememberme" checked class="form-control chk-col-red" value="true">
+                    <input type="checkbox" name="RememberMe" id="rememberme" checked class="form-control chk-col-blue" value="true">
                     <label for="rememberme" class="form-label">@L("RememberMe")</label>
                 </div>
                 <div class="col-xs-5 text-right">
@@ -72,7 +72,7 @@
             }
             <hr />
             <div class="row">
-                <div class="col-xs-12 text-center">
+                <div class="col-xs-12 text-center m-b-0">
                     <vc:account-languages></vc:account-languages>
                 </div>
             </div>

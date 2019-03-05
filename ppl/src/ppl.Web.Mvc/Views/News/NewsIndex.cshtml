@@ -339,7 +339,7 @@
                                 <div class="col-md-4">
                                     <div class="form-group form-float">
                                         <div class="form-line">
-                                            <a href="javascript:void()" class="btn btn-default file">上传封面图片<input type="file" name="CoverUrl" value="为封面添加图片" accept="" onchange="preover(this)" class="validate form-control" /></a>
+                                            <a href="javascript:void()" class="btn btn-default file">上传封面图片<input type="file" name="CoverUrl" value="为封面添加图片" accept="" onchange="" class="validate form-control" /></a>
                                         </div>
                                     </div>
                                 </div>
@@ -446,7 +446,8 @@
         </div>
     </div>
 </div>
-<script type="text/javascript" src="https://unpkg.com/wangeditor@3.1.1/release/wangEditor.min.js">
+<script src="~/js/wangEditor.min.js"></script>
+<script type="text/javascript">
     //富文本编辑器
     var E = window.wangEditor;
     var editor = new E('#editor');

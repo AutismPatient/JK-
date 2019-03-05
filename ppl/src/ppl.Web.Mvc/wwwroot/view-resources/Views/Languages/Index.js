@@ -13,7 +13,7 @@
         }
 
         function IsCheck() {
-            var check = $("input[name=IsEnabled]");
+            var check = $("input[name=IsDisabled]");
             if (check.is(":checked"))
                 check.prop("value", "true");
             else
