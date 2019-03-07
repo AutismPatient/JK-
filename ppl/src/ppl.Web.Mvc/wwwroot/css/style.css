@@ -10843,7 +10843,13 @@ html.ie11 .bs-searchbox .form-control {
 .swal-footer {
     text-align: center;
 }
-
+.info-fox:hover .number-info .icon-info i {
+    opacity:.6;
+    transform: rotate(34deg) scale(1.6);
+}
+.info-fox .number-info .icon-info i {
+    transition: all 0.5s ease;
+}
 .info-fox {
     color: #333;
     margin: 20px 15px;
@@ -10858,12 +10864,8 @@ html.ie11 .bs-searchbox .form-control {
 
     .number-info .icon-info {
         float: right;
-        padding: 6px 0px 0 0;
     }
 
-        .number-info .icon-info i {
-            font-size: 30px;
-        }
 
 .number-title {
     float: left;
@@ -10938,10 +10940,12 @@ html.ie11 .bs-searchbox .form-control {
     background-color: #9C27B0;
 }
 
-.number-title p, .progress-status p, .icon-info i {
+.number-title p, .progress-status p{
     color: #5f5f5f;
 }
-
+.icon-info i{
+    font-size:50px;
+}
     .data_info .card .header {
         padding: 16px 20px;
     }
