@@ -40,6 +40,7 @@
         @*<link href="~/fonts/roboto/roboto.css" rel="stylesheet" asp-append-version="true" />*@
         <link href="~/fonts/material-icons/materialicons.css" rel="stylesheet" asp-append-version="true" />
         <!-- 最新版本的 Bootstrap 核心 CSS 文件 -->
+        <link href="~/css/liststyle/style.css" rel="stylesheet" asp-append-version="true"/>
         @*<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous" asp-append-version="true">*@
         <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" asp-append-version="true" />
         <link href="~/lib/bootstrap-select/dist/css/bootstrap-select.css" rel="stylesheet" asp-append-version="true" />
@@ -128,12 +129,12 @@
             @await Component.InvokeAsync(typeof(SideBarNavViewComponent), new { activeMenu = ViewBag.CurrentPageName })
 
             <!-- Footer -->
-            <div class="legal text-center">
+            <div class="legal">
                 <div class="copyright">
-                    <a asp-action="Index" asp-controller="Home">截客资料库</a>
+                    <a asp-controller="Home" asp-action="Index">截客资料库 - Salif Dianda .</a>
                 </div>
-                <div class="version" style="font-family:cursive">
-                    <b>Powered By Asp .Net core Of Abp V4.0</b> 
+                <div class="version">
+                    <b>版本: </b> 1.0.0 
                 </div>
             </div>
             <!-- #Footer -->

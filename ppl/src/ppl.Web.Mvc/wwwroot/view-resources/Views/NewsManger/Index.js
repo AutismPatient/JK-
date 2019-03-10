@@ -41,11 +41,9 @@
         $("#IsCheckAll").click(function () {
             if ($(this).is(":checked")) {
                 check.prop("checked", true);
-                label.text("取消");
             }
             else {
                 check.prop("checked", false);
-                label.text("全选");
             }
         });
         $("#DeleteList").click(function () {

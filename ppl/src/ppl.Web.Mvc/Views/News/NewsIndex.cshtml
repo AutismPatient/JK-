@@ -15,179 +15,50 @@
         <script src="~/view-resources/Views/NewsManger/Index.js" asp-append-version="true"></script>
     </environment>
 }
-<style>
-    .gurp {
-        position: absolute;
-        top: 0;
-        right: 0;
-        max-width: 50%;
-    }
 
-    .btn-circle {
-        width: 30px;
-        height: 30px;
-    }
-
-        .btn-circle i {
-            left: -4px;
-        }
-
-    #select {
-        padding-bottom: 6px;
-    }
-
-    [type="checkbox"] + label {
-        line-height: 23px;
-        margin-bottom: 0;
-    }
-
-    .file {
-        position: relative;
-        display: block;
-        cursor: pointer;
-    }
-
-        .file input {
-            opacity: 0;
-            position: absolute;
-            left: 0;
-            top: 0;
-        }
-
-    form textarea {
-        max-width: 100%;
-        min-width: 100%;
-        min-height: 45px;
-    }
-
-    .tags {
-        cursor: pointer;
-        padding-bottom: 2.4px;
-        position: relative;
-        margin-right: 12px;
-    }
-
-        .tags:hover i {
-            opacity: 1;
-        }
-
-        .tags i {
-            opacity: 0;
-            font-size: inherit;
-            position: absolute;
-            right: -6px;
-            top: -2px;
-            background-color: #333;
-        }
-
-    .div-pad {
-        padding: 10px;
-        border: 1px dashed #808080;
-        margin-bottom: 20px;
-    }
-
-    .seach {
-        padding: 10px;
-    }
-
-        .seach input {
-            border-radius: 0;
-            width: 280px;
-        }
-
-    .table-responsive a[disabled] {
-        opacity: 0.5;
-        cursor: not-allowed;
-        pointer-events: none;
-    }
-
-    .dropdown {
-        margin-left: 20px;
-    }
-
-    tbody > tr:hover {
-        background-color: #f5f5f5;
-    }
-
-    .image-input img {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .label {
-        padding: .3em .6em;
-    }
-
-    .bg-orange-w {
-        background-color: #ff5722;
-    }
-    .bg-black-50{
-        background-color:#333333;
-    }
-    .table{
-        position:relative;
-    }
-    thead{
-        background-color:#333;
-        color:#fff;
-    }
-    [type="checkbox"].filled-in:not(:checked) + label:after {
-        border: 2px solid #ddd;
-    }
-</style>
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
             <div class="header">
                 <h2>
-                    @L("NewsList") <small>共有 @Model.NewsList.Where(x => x.IsDeleted == false).Count() 条可编辑数据</small>
+                    @L("NewsList") <small>( @Model.NewsList.Where(x => x.IsDeleted == false).Count() )</small>
                 </h2>
-                <ul class="header-dropdown m-r--5">
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">delete</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a id="DeleteList" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">priority_high</i>批量删除</a>
-                            </li>
-                        </ul>
+                <ul class="header-dropdown top">
+                    <li>
+                        <button type="button" class="btn btn-primary waves-effect collapsed" data-toggle="collapse" data-target="#search" aria-expanded="false" aria-controls="search">
+                            展开搜索
+                        </button>
                     </li>
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">reply</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li>
-                                <a id="replyList" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">priority_high</i>批量恢复</a>
-                            </li>
-                        </ul>
+                    <li><button id="DeleteList" class="btn bg-pink waves-effect"><i class="material-icons">report_problem</i></button></li>
+                    <li>
+                        <button id="replyList" class="btn bg-indigo waves-effect"><i class="material-icons">reply</i></button>
                     </li>
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">search</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-                            <li class="seach"><input type="text" name="seacrh" placeholder="搜索文章" class="form-control form-group-sm" /></li>
-                        </ul>
+                    <li><button id="RefreshButton" class="btn bg-teal waves-effect"><i class="material-icons">refresh</i></button></li>
+                    <li>
+                        <button type="button" class="btn bg-red waves-effect">
+                            <i class="material-icons">print</i>
+                        </button>
                     </li>
-                    <li class="dropdown">
-                        <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="material-icons">more_vert</i>
-                        </a>
-                        <ul class="dropdown-menu pull-right">
-
-                            <li><a id="RefreshButton" href="javascript:void(0);" class="waves-effect waves-block"><i class="material-icons">refresh</i>刷新数据</a></li>
-                        </ul>
+                    <li>
+                        <button class="btn btn-success waves-effect">
+                            <i class="material-icons">file_download</i>
+                        </button>
                     </li>
                 </ul>
+                <div class="collapse m-t-20" id="search" aria-expanded="true">
+                    <div class="well">
+                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. Nihil anim keffiyeh helvetica,
+                        craft beer labore wes anderson cred nesciunt sapiente ea proident.
+                    </div>
+                </div>
             </div>
+            
             <div class="body table-responsive">
                 <table class="table">
                     <thead>
                         <tr>
                             <th id="select" style="width:5%">
-                                <input id="IsCheckAll" type="checkbox" name="IsCheckAll" value="false" class="filled-in"><label for="IsCheckAll" class=""> 全选 </label>
+                                <input id="IsCheckAll" type="checkbox" name="IsCheckAll" value="false"><label for="IsCheckAll"></label>
                             </th>
                             <th style="width:24%">@L("Title")</th>
                             <th style="width:7%">是否推荐</th>
@@ -209,7 +80,7 @@
                                 <td><i class="material-icons" style="color:@(news.Recommend==Recommend.No ? "red":"green");">@(news.Recommend == Recommend.No ? "indeterminate_check_box" : "check_box")</i></td>
                                 <td>@String.Format("{0:D}", news.CreationTime)</td>
                                 <td>@news.Author.FullName</td>
-                                <td>@Model.newsCategoryDtos.Where(x=>x.Id==news.CategoryId).FirstOrDefault().CategoryName</td>
+                                <td>@Model.newsCategoryDtos.Where(x => x.Id == news.CategoryId).FirstOrDefault().CategoryName</td>
                                 <td>@news.PageView</td>
                                 <td><span class="label bg-black-50">@(news.IsDeleted ? "是" : "否")</span></td>
                                 <td>
@@ -257,7 +128,7 @@
                     </tbody>
                 </table>
                 <div class="row" style="margin-top:30px;">
-                     @Html.Partial("~/Views/Shared/Modals/_PageInfo.cshtml",new PageViewModel("News","NewIndex",Model.PageIndex,Model.PageSize,Model.TotalPageCount,Model.HasPreviousPage,Model.HasNextPage,Model.TotalCount))
+                    @Html.Partial("~/Views/Shared/Modals/_PageInfo.cshtml", new PageViewModel("News", "NewIndex", Model.PageIndex, Model.PageSize, Model.TotalPageCount, Model.HasPreviousPage, Model.HasNextPage, Model.TotalCount))
                     <div class="col-md-9 text-right">
                         <button type="button" class="btn btn-success btn-sm btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#NewsCreateModal">
                             <i class="material-icons">add</i>

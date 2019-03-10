@@ -3830,7 +3830,7 @@ section.content {
             }
 
                 .card .header .header-dropdown i:hover {
-                    color: #000;
+                    /*color: #000;*/
                 }
 
         .card .header h2 {
@@ -10080,11 +10080,11 @@ fieldset[disabled] .form-control {
             overflow: hidden;
         }
 
-            .sidebar .legal .copyright a {
-                letter-spacing: 2px;
-                font-size: 14px;
-                font-weight: 400;
+            .sidebar .legal a {
+                font-size: 13px;
+                font-weight: bold;
                 text-decoration: none;
+                color: #ce0046;
             }
 
         .sidebar .legal .version {
@@ -10958,7 +10958,7 @@ html.ie11 .bs-searchbox .form-control {
     display: inline-block;
 }
 .data_info .card .header .header-dropdown{
-    top:14px;
+    top:11px;
 }
 .pad {
     padding: 2px 7px;

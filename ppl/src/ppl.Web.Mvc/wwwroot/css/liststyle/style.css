@@ -1,0 +1,18 @@
+﻿.card .header h2 small {
+    display: initial!important;
+}
+.top{
+    top:14px!important;
+}
+.top > li > button > i.material-icons {
+    float: left;
+    margin-right: 0px;
+    font-size: 20px;
+    top:0px!important;
+}
+.top li{
+    margin-right:8px;
+}
+.table [type="checkbox"] + label{
+    height:10px;
+}
