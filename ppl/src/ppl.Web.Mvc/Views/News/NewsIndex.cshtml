@@ -15,7 +15,116 @@
         <script src="~/view-resources/Views/NewsManger/Index.js" asp-append-version="true"></script>
     </environment>
 }
+<style>
+.pad {
+        padding: 2px 7px;
+    }
 
+    .gurp {
+        position: absolute;
+        top: 0;
+        right: 0;
+        max-width: 50%;
+    }
+
+    .input-info {
+        font-size: 13px;
+        height: 28px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.16), 0 2px 10px rgba(0, 0, 0, 0.12);
+        border-radius: 2px;
+    }
+
+    .input-group .form-control:focus {
+        z-index: initial;
+    }
+
+    .file {
+        position: relative;
+        display: block;
+        cursor: pointer;
+    }
+
+        .file input {
+            opacity: 0;
+            position: absolute;
+            left: 0;
+            top: 0;
+        }
+
+    form textarea {
+        max-width: 100%;
+        min-width: 100%;
+        min-height: 45px;
+    }
+
+    .tags {
+        cursor: pointer;
+        padding-bottom: 2.4px;
+        position: relative;
+        margin-right: 12px;
+    }
+
+        .tags:hover i {
+            opacity: 1;
+        }
+
+        .tags i {
+            opacity: 0;
+            font-size: inherit;
+            position: absolute;
+            right: -6px;
+            top: -2px;
+            background-color: #333;
+        }
+
+    .div-pad {
+        padding: 10px;
+        border: 1px dashed #808080;
+        margin-bottom: 20px;
+    }
+
+    .seach {
+        padding: 10px;
+    }
+
+        .seach input {
+            border-radius: 0;
+            width: 280px;
+        }
+
+    .table-responsive a[disabled] {
+        opacity: 0.5;
+        cursor: not-allowed;
+        pointer-events: none;
+    }
+
+    .dropdown {
+        margin-left: 20px;
+    }
+
+    tbody > tr:hover {
+        background-color: #f5f5f5;
+    }
+
+    .image-input img {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .label {
+        padding: .3em .6em;
+    }
+
+    .bg-orange-w {
+        background-color: #ff5722;
+    }
+    .bg-black-50{
+        background-color:#333333;
+    }
+    .table{
+        position:relative;
+    }
+</style>
 <div class="row clearfix">
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="card">
@@ -25,22 +134,22 @@
                 </h2>
                 <ul class="header-dropdown top">
                     <li>
-                        <button type="button" class="btn btn-primary waves-effect collapsed" data-toggle="collapse" data-target="#search" aria-expanded="false" aria-controls="search">
+                        <button type="button" class="btn btn-link waves-effect collapsed" data-toggle="collapse" data-target="#search" aria-expanded="false" aria-controls="search">
                             展开搜索
                         </button>
                     </li>
-                    <li><button id="DeleteList" class="btn bg-pink waves-effect"><i class="material-icons">report_problem</i></button></li>
+                    <li><button type="button" id="DeleteList" class="btn btn-link waves-effect col-pink">批量删除</button></li>
                     <li>
-                        <button id="replyList" class="btn bg-indigo waves-effect"><i class="material-icons">reply</i></button>
+                        <button type="button" id="replyList" class="btn btn-link waves-effect">批量恢复</button>
                     </li>
-                    <li><button id="RefreshButton" class="btn bg-teal waves-effect"><i class="material-icons">refresh</i></button></li>
+                    <li><button id="RefreshButton" type="button" class="btn btn-link waves-effect"><i class="material-icons">repeat</i></button></li>
                     <li>
-                        <button type="button" class="btn bg-red waves-effect">
+                        <button type="button" class="btn btn-link waves-effect" id="print_table">
                             <i class="material-icons">print</i>
                         </button>
                     </li>
                     <li>
-                        <button class="btn btn-success waves-effect">
+                        <button class="btn btn-link waves-effect" id="down_file">
                             <i class="material-icons">file_download</i>
                         </button>
                     </li>
@@ -129,8 +238,8 @@
                 </table>
                 <div class="row" style="margin-top:30px;">
                     @Html.Partial("~/Views/Shared/Modals/_PageInfo.cshtml", new PageViewModel("News", "NewIndex", Model.PageIndex, Model.PageSize, Model.TotalPageCount, Model.HasPreviousPage, Model.HasNextPage, Model.TotalCount))
-                    <div class="col-md-9 text-right">
-                        <button type="button" class="btn btn-success btn-sm btn-circle waves-effect waves-circle waves-float pull-right" data-toggle="modal" data-target="#NewsCreateModal">
+                    <div class="col-md-9 text-right" style="margin-top:-10px">
+                        <button type="button" class="btn btn-primary btn-circle waves-effect waves-circle waves-float" data-toggle="modal" data-target="#NewsCreateModal">
                             <i class="material-icons">add</i>
                         </button>
                     </div>
@@ -209,7 +318,7 @@
                             <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group form-float">
-                                        <div class="form-line">
+                                        <div>
                                             <a href="javascript:void()" class="btn btn-default file">上传封面图片<input type="file" name="CoverUrl" value="为封面添加图片" accept="" onchange="" class="validate form-control" /></a>
                                         </div>
                                     </div>

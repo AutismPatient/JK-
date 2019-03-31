@@ -79,9 +79,13 @@ namespace ppl.Web.Mvc.Controllers
                     var filename = file.FileName;
                     var path = string.Format("{0}/{1}", _hostingEnvironment.WebRootPath,AppConsts.FolderPath);
                     var url = Path.Combine(path, filename);
+                    FileStream fileStream = new FileStream(path, FileMode.Open);
+                    byte[] data = new byte[fileStream.Length];
                     foreach (var img in Directory.GetFiles(path))
                     {
-                        if (img.Equals(url))
+                        FileStream ReqStream = new FileStream(img, FileMode.Open);
+                        byte[] eq = new byte[ReqStream.Length];
+                        if (data.Equals(eq))
                         {
                             urlname = "选择的图片已存在，请勿上传！";
                             return Json(urlname);

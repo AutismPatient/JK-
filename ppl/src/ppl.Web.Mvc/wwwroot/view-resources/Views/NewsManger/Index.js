@@ -179,7 +179,6 @@
                     }
                     else {
                         img = result.result;
-                        
                     }
                 },
                 error: function (e) {
