@@ -56,7 +56,6 @@
 
 </head>
 <body class="login-page">
-
     <div class="login-box">
         <div class="logo">
             <i class="fab fa-affiliatetheme" style="margin-right:.7em;font-weight: lighter;color:crimson"></i>
@@ -65,13 +64,16 @@
 
         @if (MultiTenancyConfig.IsEnabled)
         {
-            <div class="tenant-change-box">
-                <vc:tenant-change></vc:tenant-change>
-            </div>
+            if (ViewBag.IsForget==null)
+            {
+                <div class="tenant-change-box">
+                    <vc:tenant-change></vc:tenant-change>
+                </div>
+            }
         }
 
         @RenderBody()
-        
+
         <div class="row">
             <div class="col-xs-12 text-center">
                 <small>&copy; @DateTime.Now.Year 截客 --  <a href="#"> ABP </a>版本： @AppVersionHelper.Version </small>

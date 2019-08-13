@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {}
+    "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {}
   },
   "projects": {
-    "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+    "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
+        "projectUniqueName": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
         "projectName": "ppl.Core",
-        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
+        "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
         "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
-        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Core\\obj\\",
+        "outputPath": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [

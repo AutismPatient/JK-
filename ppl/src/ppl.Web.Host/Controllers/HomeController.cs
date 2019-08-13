@@ -23,8 +23,7 @@ namespace ppl.Web.Host.Controllers
         }
 
         /// <summary>
-        /// This is a demo code to demonstrate sending notification to default tenant admin and host admin uers.
-        /// Don't use this code in production !!!
+        /// 测试demo 通知系统
         /// </summary>
         /// <param name="message"></param>
         /// <returns></returns>

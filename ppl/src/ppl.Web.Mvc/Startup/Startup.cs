@@ -28,12 +28,13 @@ namespace ppl.Web.Startup
 
         public IServiceProvider ConfigureServices(IServiceCollection services)
         {
-            // MVC
+            
             services.AddMvc(
                 options => options.Filters.Add(new AutoValidateAntiforgeryTokenAttribute())
             ).SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             IdentityRegistrar.Register(services);
+
             AuthConfigurer.Configure(services, _appConfiguration);
 
             services.AddScoped<IWebResourceManager, WebResourceManager>();
@@ -44,7 +45,7 @@ namespace ppl.Web.Startup
             });
             // Configure Abp and Dependency Injection
             return services.AddAbp<pplWebMvcModule>(
-                // Configure Log4Net logging
+                // Configure Log4Net 日志
                 options => options.IocManager.IocContainer.AddFacility<LoggingFacility>(
                     f => f.UseAbpLog4Net().WithConfig("log4net.config")
                 )

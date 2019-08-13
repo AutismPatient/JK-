@@ -106,7 +106,7 @@ namespace ppl.Web.Controllers
             return Json(new AjaxResponse { TargetUrl = returnUrl });
         }
 
-        public async Task<ActionResult> Logout(string returnUrl="")
+        public async Task<ActionResult> Logout(string returnUrl = "")
         {
             if (!string.IsNullOrEmpty(returnUrl))
             {
@@ -198,7 +198,7 @@ namespace ppl.Web.Controllers
                 if (model.IsExternalLogin)
                 {
                     Debug.Assert(externalLoginInfo != null);
-                    
+
                     if (string.Equals(externalLoginInfo.Principal.FindFirstValue(ClaimTypes.Email), model.EmailAddress, StringComparison.OrdinalIgnoreCase))
                     {
                         user.IsEmailConfirmed = true;
@@ -293,7 +293,7 @@ namespace ppl.Web.Controllers
         public virtual async Task<ActionResult> ExternalLoginCallback(string returnUrl, string remoteError = null)
         {
             returnUrl = NormalizeReturnUrl(returnUrl);
-            
+
             if (remoteError != null)
             {
                 Logger.Error("Remote Error in ExternalLoginCallback: " + remoteError);
@@ -459,6 +459,47 @@ namespace ppl.Web.Controllers
             return Content("Sent notification: " + message);
         }
 
+        #endregion
+
+        #region
+        /// <summary>
+        /// 密码重置操作
+        /// </summary>
+        /// <returns></returns>
+        public ActionResult ForgetThePassword()
+        {
+            return ForgetView();
+        }
+        private ActionResult ForgetView()
+        {
+            ViewBag.IsForget = true;
+            return View("ForgetThePassword");
+        }
+        /// <summary>
+        /// 提交确认
+        /// </summary>
+        /// <param name="email">邮箱地址</param>
+        /// <returns></returns>
+        [HttpPost]
+        public async Task<ActionResult> ForgetThePassword(string email)
+        {
+            try
+            {
+                if (!string.IsNullOrWhiteSpace(email))
+                {
+                    var user = await _userManager.FindByEmailAsync(email);
+                    if (user == null)
+                    {
+                        throw new UserFriendlyException("未找到该邮箱的账号，请检查后重试！");
+                    }
+                }
+            }
+            catch (UserFriendlyException ex)
+            {
+                return View("ForgetThePassword", new ForgetPasswordViewModel() { Email = ex.Message });
+            }
+            return View("");
+        }
         #endregion
     }
 }

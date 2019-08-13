@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\myppl\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj": {}
+    "D:\\git-re\\-\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj": {}
   },
   "projects": {
-    "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj": {
+    "D:\\git-re\\-\\ppl\\src\\ppl.Application\\ppl.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj",
+        "projectUniqueName": "D:\\git-re\\-\\ppl\\src\\ppl.Application\\ppl.Application.csproj",
         "projectName": "ppl.Application",
-        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj",
+        "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Application\\ppl.Application.csproj",
         "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
-        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Application\\obj\\",
+        "outputPath": "D:\\git-re\\-\\ppl\\src\\ppl.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -32,8 +32,8 @@
         "frameworks": {
           "net461": {
             "projectReferences": {
-              "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
-                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj"
+              "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+                "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj"
               }
             }
           }
@@ -54,17 +54,17 @@
         }
       }
     },
-    "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+    "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
+        "projectUniqueName": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
         "projectName": "ppl.Core",
-        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
+        "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj",
         "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
-        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Core\\obj\\",
+        "outputPath": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -126,17 +126,17 @@
         }
       }
     },
-    "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj": {
+    "D:\\git-re\\-\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj",
+        "projectUniqueName": "D:\\git-re\\-\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj",
         "projectName": "ppl.EntityFrameworkCore",
-        "projectPath": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj",
+        "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj",
         "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
-        "outputPath": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\obj\\",
+        "outputPath": "D:\\git-re\\-\\ppl\\src\\ppl.EntityFrameworkCore\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -154,8 +154,8 @@
         "frameworks": {
           "net461": {
             "projectReferences": {
-              "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
-                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Core\\ppl.Core.csproj"
+              "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj": {
+                "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Core\\ppl.Core.csproj"
               }
             }
           }
@@ -190,17 +190,17 @@
         }
       }
     },
-    "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj": {
+    "D:\\git-re\\-\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj",
+        "projectUniqueName": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj",
         "projectName": "ppl.Web.Core",
-        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj",
+        "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj",
         "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
-        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\obj\\",
+        "outputPath": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -218,11 +218,11 @@
         "frameworks": {
           "net461": {
             "projectReferences": {
-              "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj": {
-                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Application\\ppl.Application.csproj"
+              "D:\\git-re\\-\\ppl\\src\\ppl.Application\\ppl.Application.csproj": {
+                "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Application\\ppl.Application.csproj"
               },
-              "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj": {
-                "projectPath": "D:\\myppl\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj"
+              "D:\\git-re\\-\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj": {
+                "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.EntityFrameworkCore\\ppl.EntityFrameworkCore.csproj"
               }
             }
           }
@@ -273,17 +273,17 @@
         }
       }
     },
-    "D:\\myppl\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj": {
+    "D:\\git-re\\-\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\myppl\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj",
+        "projectUniqueName": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj",
         "projectName": "ppl.Web.Host",
-        "projectPath": "D:\\myppl\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj",
+        "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Host\\ppl.Web.Host.csproj",
         "packagesPath": "C:\\Users\\UUD\\.nuget\\packages\\",
-        "outputPath": "D:\\myppl\\ppl\\src\\ppl.Web.Host\\obj\\",
+        "outputPath": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Host\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
-          "C:\\Program Files (x86)\\Xamarin\\NuGet\\",
+          "C:\\ProgramData\\Xamarin\\NuGet\\",
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
         ],
         "configFilePaths": [
@@ -301,8 +301,8 @@
         "frameworks": {
           "net461": {
             "projectReferences": {
-              "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj": {
-                "projectPath": "D:\\myppl\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj"
+              "D:\\git-re\\-\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj": {
+                "projectPath": "D:\\git-re\\-\\ppl\\src\\ppl.Web.Core\\ppl.Web.Core.csproj"
               }
             }
           }
